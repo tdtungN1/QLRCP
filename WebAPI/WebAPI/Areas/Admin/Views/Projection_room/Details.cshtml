@@ -1,0 +1,43 @@
+﻿@model WebAPI.Models.Projection_room
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Projection_room</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusRoom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusRoom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre_room.GenreRoomName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre_room.GenreRoomName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RoomID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

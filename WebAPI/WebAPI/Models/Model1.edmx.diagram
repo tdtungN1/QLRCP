@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="97ad416998e0414a9cb1795c498570af" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="QLRapChieuPhimModel.Chair" Width="1.5" PointX="7.125" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLRapChieuPhimModel.Customer" Width="1.5" PointX="9.625" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLRapChieuPhimModel.Film" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLRapChieuPhimModel.Film_GenreFilm" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLRapChieuPhimModel.Genre_chair" Width="1.5" PointX="5" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLRapChieuPhimModel.Genre_film" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLRapChieuPhimModel.Genre_room" Width="1.5" PointX="10" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLRapChieuPhimModel.Projection_room" Width="1.5" PointX="9.625" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLRapChieuPhimModel.sysdiagram" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLRapChieuPhimModel.Ticket" Width="1.5" PointX="5.125" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLRapChieuPhimModel.User" Width="1.5" PointX="7.375" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="QLRapChieuPhimModel.FK_Chair_Genre_chair" ManuallyRouted="false" />
+        <AssociationConnector Association="QLRapChieuPhimModel.FK_Chair_Projection_room" ManuallyRouted="false" />
+        <AssociationConnector Association="QLRapChieuPhimModel.FK_Ticket_Chair" ManuallyRouted="false" />
+        <AssociationConnector Association="QLRapChieuPhimModel.FK_Customer_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="QLRapChieuPhimModel.FK_Film_GenreFilm_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="QLRapChieuPhimModel.FK_Ticket_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="QLRapChieuPhimModel.FK_Film_GenreFilm_Genre_film" ManuallyRouted="false" />
+        <AssociationConnector Association="QLRapChieuPhimModel.FK__Projectio__ID_ge__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="QLRapChieuPhimModel.FK_Ticket_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
