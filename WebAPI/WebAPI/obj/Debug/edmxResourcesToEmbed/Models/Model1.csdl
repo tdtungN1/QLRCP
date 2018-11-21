@@ -4,31 +4,31 @@
     <Key>
       <PropertyRef Name="ChairID" />
     </Key>
-    <Property Name="ChairID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ChairID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ChairName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="RoomID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="GenreChairID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoomID" Type="Int32" Nullable="false" />
+    <Property Name="GenreChairID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Genre_chair" Relationship="Self.FK_Chair_Genre_chair" FromRole="Chair" ToRole="Genre_chair" />
-    <NavigationProperty Name="Projection_room" Relationship="Self.FK_Chair_Projection_room" FromRole="Chair" ToRole="Projection_room" />
+    <NavigationProperty Name="Room" Relationship="Self.FK_Chair_Projection_room" FromRole="Chair" ToRole="Room" />
     <NavigationProperty Name="Tickets" Relationship="Self.FK_Ticket_Chair" FromRole="Chair" ToRole="Ticket" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
       <PropertyRef Name="CustomerID" />
     </Key>
-    <Property Name="CustomerID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
     <Property Name="Birthday" Type="DateTime" Precision="0" />
-    <Property Name="UserID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="UserID" Type="Int32" />
     <NavigationProperty Name="User" Relationship="Self.FK_Customer_Users" FromRole="Customer" ToRole="Users" />
   </EntityType>
   <EntityType Name="Film">
     <Key>
       <PropertyRef Name="FilmID" />
     </Key>
-    <Property Name="FilmID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FilmID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FilmName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Producer" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
@@ -44,9 +44,9 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="FilmID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="GenreFilmID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FilmID" Type="Int32" Nullable="false" />
+    <Property Name="GenreFilmID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Film" Relationship="Self.FK_Film_GenreFilm_Film" FromRole="Film_GenreFilm" ToRole="Film" />
     <NavigationProperty Name="Genre_film" Relationship="Self.FK_Film_GenreFilm_Genre_film" FromRole="Film_GenreFilm" ToRole="Genre_film" />
   </EntityType>
@@ -54,7 +54,7 @@
     <Key>
       <PropertyRef Name="GenreChairID" />
     </Key>
-    <Property Name="GenreChairID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GenreChairID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="GenreChairName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Chairs" Relationship="Self.FK_Chair_Genre_chair" FromRole="Genre_chair" ToRole="Chair" />
   </EntityType>
@@ -62,7 +62,7 @@
     <Key>
       <PropertyRef Name="GenreFilmID" />
     </Key>
-    <Property Name="GenreFilmID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GenreFilmID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="GenreFilmName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Film_GenreFilm" Relationship="Self.FK_Film_GenreFilm_Genre_film" FromRole="Genre_film" ToRole="Film_GenreFilm" />
   </EntityType>
@@ -70,20 +70,20 @@
     <Key>
       <PropertyRef Name="GenreRoomID" />
     </Key>
-    <Property Name="GenreRoomID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GenreRoomID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="GenreRoomName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Projection_room" Relationship="Self.FK__Projectio__ID_ge__5070F446" FromRole="Genre_room" ToRole="Projection_room" />
+    <NavigationProperty Name="Rooms" Relationship="Self.FK__Projectio__ID_ge__5070F446" FromRole="Genre_room" ToRole="Room" />
   </EntityType>
-  <EntityType Name="Projection_room">
+  <EntityType Name="Room">
     <Key>
       <PropertyRef Name="RoomID" />
     </Key>
-    <Property Name="RoomID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RoomID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RoomName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="GenreRoomID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="StatusRoom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Chairs" Relationship="Self.FK_Chair_Projection_room" FromRole="Projection_room" ToRole="Chair" />
-    <NavigationProperty Name="Genre_room" Relationship="Self.FK__Projectio__ID_ge__5070F446" FromRole="Projection_room" ToRole="Genre_room" />
+    <Property Name="GenreRoomID" Type="Int32" Nullable="false" />
+    <Property Name="StatusRoom" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="Chairs" Relationship="Self.FK_Chair_Projection_room" FromRole="Room" ToRole="Chair" />
+    <NavigationProperty Name="Genre_room" Relationship="Self.FK__Projectio__ID_ge__5070F446" FromRole="Room" ToRole="Genre_room" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -99,12 +99,12 @@
     <Key>
       <PropertyRef Name="TicketID" />
     </Key>
-    <Property Name="TicketID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ChairID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="FilmID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TicketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChairID" Type="Int32" Nullable="false" />
+    <Property Name="FilmID" Type="Int32" Nullable="false" />
     <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Price" Type="Int64" Nullable="false" />
-    <Property Name="UserID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Chair" Relationship="Self.FK_Ticket_Chair" FromRole="Ticket" ToRole="Chair" />
     <NavigationProperty Name="Film" Relationship="Self.FK_Ticket_Film" FromRole="Ticket" ToRole="Film" />
     <NavigationProperty Name="User" Relationship="Self.FK_Ticket_Users" FromRole="Ticket" ToRole="Users" />
@@ -113,7 +113,7 @@
     <Key>
       <PropertyRef Name="UserID" />
     </Key>
-    <Property Name="UserID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="password" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -134,10 +134,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Chair_Projection_room">
-    <End Role="Projection_room" Type="Self.Projection_room" Multiplicity="1" />
+    <End Role="Room" Type="Self.Room" Multiplicity="1" />
     <End Role="Chair" Type="Self.Chair" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Projection_room">
+      <Principal Role="Room">
         <PropertyRef Name="RoomID" />
       </Principal>
       <Dependent Role="Chair">
@@ -207,12 +207,12 @@
   </Association>
   <Association Name="FK__Projectio__ID_ge__5070F446">
     <End Role="Genre_room" Type="Self.Genre_room" Multiplicity="1" />
-    <End Role="Projection_room" Type="Self.Projection_room" Multiplicity="*" />
+    <End Role="Room" Type="Self.Room" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Genre_room">
         <PropertyRef Name="GenreRoomID" />
       </Principal>
-      <Dependent Role="Projection_room">
+      <Dependent Role="Room">
         <PropertyRef Name="GenreRoomID" />
       </Dependent>
     </ReferentialConstraint>
@@ -237,7 +237,7 @@
     <EntitySet Name="Genre_chair" EntityType="Self.Genre_chair" />
     <EntitySet Name="Genre_film" EntityType="Self.Genre_film" />
     <EntitySet Name="Genre_room" EntityType="Self.Genre_room" />
-    <EntitySet Name="Projection_room" EntityType="Self.Projection_room" />
+    <EntitySet Name="Rooms" EntityType="Self.Room" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="Tickets" EntityType="Self.Ticket" />
     <EntitySet Name="Users" EntityType="Self.User" />
@@ -246,7 +246,7 @@
       <End Role="Chair" EntitySet="Chairs" />
     </AssociationSet>
     <AssociationSet Name="FK_Chair_Projection_room" Association="Self.FK_Chair_Projection_room">
-      <End Role="Projection_room" EntitySet="Projection_room" />
+      <End Role="Room" EntitySet="Rooms" />
       <End Role="Chair" EntitySet="Chairs" />
     </AssociationSet>
     <AssociationSet Name="FK_Ticket_Chair" Association="Self.FK_Ticket_Chair">
@@ -271,7 +271,7 @@
     </AssociationSet>
     <AssociationSet Name="FK__Projectio__ID_ge__5070F446" Association="Self.FK__Projectio__ID_ge__5070F446">
       <End Role="Genre_room" EntitySet="Genre_room" />
-      <End Role="Projection_room" EntitySet="Projection_room" />
+      <End Role="Room" EntitySet="Rooms" />
     </AssociationSet>
     <AssociationSet Name="FK_Ticket_Users" Association="Self.FK_Ticket_Users">
       <End Role="Users" EntitySet="Users" />

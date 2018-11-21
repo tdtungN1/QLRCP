@@ -71,9 +71,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Projection_room">
-      <EntityTypeMapping TypeName="QLRapChieuPhimModel.Projection_room">
-        <MappingFragment StoreEntitySet="Projection_room">
+    <EntitySetMapping Name="Rooms">
+      <EntityTypeMapping TypeName="QLRapChieuPhimModel.Room">
+        <MappingFragment StoreEntitySet="Room">
           <ScalarProperty Name="RoomID" ColumnName="RoomID" />
           <ScalarProperty Name="RoomName" ColumnName="RoomName" />
           <ScalarProperty Name="GenreRoomID" ColumnName="GenreRoomID" />

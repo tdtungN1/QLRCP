@@ -1,0 +1,37 @@
+﻿.d-flex {
+    display: flex;
+}
+
+
+.i-number-room {
+    width: 70px !important;
+}
+
+.select-genre-room {
+    width: calc(100% - 40px) !important;
+}
+
+.btn-add-quick {
+    width: 40px !important;
+}
+
+.view-room {
+    overflow: auto;
+}
+
+.view-chair {
+    font-size: 16px;
+    padding: 7px;
+}
+
+.normal-chair {
+    color: dimgray;
+}
+
+.vip-chair {
+    color: orange;
+}
+
+.couple-chair {
+    color: red;
+}

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WebAPI.Models.Room>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Phòng</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Mã phòng
+            </th>
+            <th>
+                Tên phòng
+            </th>
+            <th>
+                Loại phòng
+            </th>
+            <th>Trạng thái</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="tbody-room">
+
+    </tbody>
+</table>

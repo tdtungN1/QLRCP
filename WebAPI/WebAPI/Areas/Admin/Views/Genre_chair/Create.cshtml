@@ -1,0 +1,38 @@
+﻿@model WebAPI.Models.Genre_chair
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section boxTitle {
+    <div class="col-md-12">
+        @Html.ActionLink("Trở về", "Index")
+    </div>
+}
+<h2>Thêm mới</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Loại ghế</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.GenreChairName, "Tên loại ghế:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GenreChairName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GenreChairName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-12 form-group">
+            <button type="button" class="btn btn-success" id="btn-add-genre-chair">Thêm mới</button>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -4,27 +4,27 @@
     <Key>
       <PropertyRef Name="ChairID" />
     </Key>
-    <Property Name="ChairID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="ChairID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ChairName" Type="nvarchar" MaxLength="10" Nullable="false" />
-    <Property Name="RoomID" Type="varchar" MaxLength="5" Nullable="false" />
-    <Property Name="GenreChairID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="RoomID" Type="int" Nullable="false" />
+    <Property Name="GenreChairID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
       <PropertyRef Name="CustomerID" />
     </Key>
-    <Property Name="CustomerID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Address" Type="nvarchar" MaxLength="200" />
     <Property Name="Phone" Type="varchar" MaxLength="12" />
     <Property Name="Birthday" Type="date" />
-    <Property Name="UserID" Type="varchar" MaxLength="5" />
+    <Property Name="UserID" Type="int" />
   </EntityType>
   <EntityType Name="Film">
     <Key>
       <PropertyRef Name="FilmID" />
     </Key>
-    <Property Name="FilmID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="FilmID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FilmName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Author" Type="nvarchar" MaxLength="50" />
     <Property Name="Producer" Type="nvarchar" MaxLength="30" />
@@ -38,39 +38,39 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="varchar" MaxLength="5" Nullable="false" />
-    <Property Name="FilmID" Type="varchar" MaxLength="5" Nullable="false" />
-    <Property Name="GenreFilmID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FilmID" Type="int" Nullable="false" />
+    <Property Name="GenreFilmID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Genre_chair">
     <Key>
       <PropertyRef Name="GenreChairID" />
     </Key>
-    <Property Name="GenreChairID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="GenreChairID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="GenreChairName" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Genre_film">
     <Key>
       <PropertyRef Name="GenreFilmID" />
     </Key>
-    <Property Name="GenreFilmID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="GenreFilmID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="GenreFilmName" Type="nvarchar" MaxLength="30" Nullable="false" />
   </EntityType>
   <EntityType Name="Genre_room">
     <Key>
       <PropertyRef Name="GenreRoomID" />
     </Key>
-    <Property Name="GenreRoomID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="GenreRoomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="GenreRoomName" Type="nvarchar" MaxLength="30" Nullable="false" />
   </EntityType>
-  <EntityType Name="Projection_room">
+  <EntityType Name="Room">
     <Key>
       <PropertyRef Name="RoomID" />
     </Key>
-    <Property Name="RoomID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="RoomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RoomName" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="GenreRoomID" Type="varchar" MaxLength="5" Nullable="false" />
-    <Property Name="StatusRoom" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="GenreRoomID" Type="int" Nullable="false" />
+    <Property Name="StatusRoom" Type="tinyint" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -86,18 +86,18 @@
     <Key>
       <PropertyRef Name="TicketID" />
     </Key>
-    <Property Name="TicketID" Type="varchar" MaxLength="5" Nullable="false" />
-    <Property Name="ChairID" Type="varchar" MaxLength="5" Nullable="false" />
-    <Property Name="FilmID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="TicketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChairID" Type="int" Nullable="false" />
+    <Property Name="FilmID" Type="int" Nullable="false" />
     <Property Name="StartTime" Type="datetime" Nullable="false" />
     <Property Name="Price" Type="bigint" Nullable="false" />
-    <Property Name="UserID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="UserID" />
     </Key>
-    <Property Name="UserID" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="password" Type="varchar" MaxLength="32" Nullable="false" />
     <Property Name="email" Type="varchar" MaxLength="100" />
@@ -105,12 +105,12 @@
   </EntityType>
   <Association Name="FK__Projectio__ID_ge__5070F446">
     <End Role="Genre_room" Type="Self.Genre_room" Multiplicity="1" />
-    <End Role="Projection_room" Type="Self.Projection_room" Multiplicity="*" />
+    <End Role="Room" Type="Self.Room" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Genre_room">
         <PropertyRef Name="GenreRoomID" />
       </Principal>
-      <Dependent Role="Projection_room">
+      <Dependent Role="Room">
         <PropertyRef Name="GenreRoomID" />
       </Dependent>
     </ReferentialConstraint>
@@ -128,10 +128,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Chair_Projection_room">
-    <End Role="Projection_room" Type="Self.Projection_room" Multiplicity="1" />
+    <End Role="Room" Type="Self.Room" Multiplicity="1" />
     <End Role="Chair" Type="Self.Chair" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Projection_room">
+      <Principal Role="Room">
         <PropertyRef Name="RoomID" />
       </Principal>
       <Dependent Role="Chair">
@@ -219,20 +219,20 @@
     <EntitySet Name="Genre_chair" EntityType="Self.Genre_chair" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Genre_film" EntityType="Self.Genre_film" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Genre_room" EntityType="Self.Genre_room" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Projection_room" EntityType="Self.Projection_room" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Projectio__ID_ge__5070F446" Association="Self.FK__Projectio__ID_ge__5070F446">
       <End Role="Genre_room" EntitySet="Genre_room" />
-      <End Role="Projection_room" EntitySet="Projection_room" />
+      <End Role="Room" EntitySet="Room" />
     </AssociationSet>
     <AssociationSet Name="FK_Chair_Genre_chair" Association="Self.FK_Chair_Genre_chair">
       <End Role="Genre_chair" EntitySet="Genre_chair" />
       <End Role="Chair" EntitySet="Chair" />
     </AssociationSet>
     <AssociationSet Name="FK_Chair_Projection_room" Association="Self.FK_Chair_Projection_room">
-      <End Role="Projection_room" EntitySet="Projection_room" />
+      <End Role="Room" EntitySet="Room" />
       <End Role="Chair" EntitySet="Chair" />
     </AssociationSet>
     <AssociationSet Name="FK_Customer_Users" Association="Self.FK_Customer_Users">
