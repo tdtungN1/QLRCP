@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -39,18 +40,49 @@ namespace WebAPI.Areas.Admin.Controllers
         }
 
         // POST: api/GenreRoom
-        public void Post([FromBody]string value)
+        public int Post([FromBody]Genre_room value)
         {
+            string query = "INSERT dbo.Genre_room(GenreRoomName)VALUES(N'" + value.GenreRoomName+ "')";
+            try
+            {
+                int res = DataProvider.Instace.ExecuteNonQuery(query);
+            }
+            catch (SqlException)
+            {
+                return 0;
+            }
+            return 1;
         }
 
         // PUT: api/GenreRoom/5
-        public void Put(int id, [FromBody]string value)
+        public int Put(int id, [FromBody]Genre_room value)
         {
+            string query = "UPDATE dbo.Genre_room SET GenreRoomName = N'" + value.GenreRoomName + "' WHERE GenreRoomID = "+id;
+            try
+            {
+                int res = DataProvider.Instace.ExecuteNonQuery(query);
+            }
+            catch (SqlException)
+            {
+                return 0;
+            }
+            return 1;
         }
 
         // DELETE: api/GenreRoom/5
-        public void Delete(int id)
+        public int Delete(int id)
         {
+            string query = "DELETE  dbo.Genre_room WHERE GenreRoomID = " + id;
+            try
+            {
+                int res = DataProvider.Instace.ExecuteNonQuery(query);
+            }
+            catch (SqlException)
+            {
+                return 0;
+            }
+            return 1;
         }
     }
+    
 }

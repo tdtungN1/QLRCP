@@ -73,6 +73,18 @@ namespace WebAPI.Areas.Admin.Controllers.MVC
             {
                 return HttpNotFound();
             }
+            var check1 = "";
+            var check0 = "";
+            if (room.StatusRoom == 1)
+            {
+                check1 = "checked";
+            }
+            else
+            {
+                check0 = "checked";
+            }
+            ViewBag.check1 = check1;
+            ViewBag.check0 = check0;
             ViewBag.GenreRoomID = new SelectList(db.Genre_room, "GenreRoomID", "GenreRoomName", room.GenreRoomID);
             return View(room);
         }

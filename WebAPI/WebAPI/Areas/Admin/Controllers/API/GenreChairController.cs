@@ -28,14 +28,22 @@ namespace WebAPI.Areas.Admin.Controllers.API
         }
 
         // GET: api/GenreChair/5
-        public string Get(int id)
+        public Genre_chair Get(int id)
         {
-            return "value";
+            string query = "SELECT * from dbo.Genre_chair WHERE GenreChairID = " + id;
+            DataTable table = DataProvider.Instace.ExecuteQuery(query);
+            Genre_chair genreChair = new Genre_chair();
+            genreChair.GenreChairID = int.Parse(table.Rows[0]["GenreChairID"].ToString());
+            genreChair.GenreChairName = table.Rows[0]["GenreChairName"].ToString();
+            return genreChair;
         }
 
         // POST: api/GenreChair
-        public void Post([FromBody]string value)
+        public int Post([FromBody]Genre_chair value)
         {
+            string query = "INSERT dbo.Genre_chair(GenreChairName)VALUES (N'" + value.GenreChairName + ")";
+            int table = DataProvider.Instace.ExecuteNonQuery(query);
+            return
         }
 
         // PUT: api/GenreChair/5

@@ -177,7 +177,7 @@
     <Compile Include="Areas\Admin\Controllers\API\ChairController.cs" />
     <Compile Include="Areas\Admin\Controllers\API\GenreChairController.cs" />
     <Compile Include="Areas\Admin\Controllers\API\GenreRoomController.cs" />
-    <Compile Include="Areas\Admin\Controllers\MVC\Genre_chairController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MVC\FilmsController.cs" />
     <Compile Include="Areas\Admin\Controllers\MVC\Genre_roomController.cs" />
     <Compile Include="Areas\Admin\Controllers\MVC\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\API\RoomsController.cs" />
@@ -295,9 +295,11 @@
     <Content Include="Areas\Admin\Views\Genre_room\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Genre_room\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Genre_room\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Genre_chair\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Genre_chair\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Genre_chair\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Films\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Films\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Films\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Films\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Films\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

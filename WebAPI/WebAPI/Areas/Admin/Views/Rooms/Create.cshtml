@@ -30,9 +30,7 @@
             <div class="form-group col-md-12">
                 <label class="" for="">Loại phòng</label>
                 <div class="d-flex">
-                    <select name="GenreRoomID" class="form-control select-genre-room" required="required">
-                        <option value="1">a</option>
-                    </select>
+                    <select name="GenreRoomID" class="form-control select-genre-room" required="required"></select>
                     <a class="btn btn-default btn-add-quick" data-toggle="modal" href='#modal-add-genre-room'>...</a>
                     @* Modal add genre Room *@
                     <div class="modal fade" id="modal-add-genre-room">
@@ -40,7 +38,7 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title">Thêm loại phòng</h4>
+                                    <h4 class   ="modal-title">Thêm loại phòng</h4>
                                 </div>
                                 <div class="modal-body">
                                     <label>Tên loại phòng</label>
@@ -71,16 +69,16 @@
             <div class="form-group col-md-12">
                 <label class="" for="">Bố trí phòng</label>
                 <br />
-                <label>Số hàng :</label> <input type="number" name="max-row" value="1" max="26" class="i-number-room room-max-row" />
-                <label>Số dãy: </label> <input type="number" name="max-col" value="1" max="50" class="i-number-room room-max-col" />
+                <label>Số hàng :</label> <input type="number" name="max-row" value="1" max="26" class="i-number-room room-row" />
+                <label>Số dãy: </label> <input type="number" name="max-col" value="1" max="50" class="i-number-room room-col" />
             </div>
         </div>
         <div class="col-md-12 form-group">
-            <button type="button" class="btn btn-primary btn-view-room">Xem phòng</button>
+            <button type="button" class="btn btn-primary btn-view-room" onclick="BtnViewRoom_Click()">Xem phòng</button>
         </div>
         <table class="view-room"></table>
         <div class="col-md-12 form-group">
-            <button type="button" class="btn btn-success" id="btn-add-genre-room">Thêm mới</button>
+            <button type="button" class="btn btn-success" id="btn-add-room" style="display:none!important;" onclick="BtnAddRoom_Click()">Thêm mới</button>
         </div>
         <div class="ui-helper-clearfix"></div>
     </div>

@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo Cinema</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+	<header class="header">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand logo" href="#">
+						<img src="img/demo2.png" class="img-logo"> Cinema
+					</a>
+				</div>
+		
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<form class="navbar-form navbar-left form-inline form-seach" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control txt-seach" placeholder="Search" name="key">
+							<button type="submit" class="btn icon-seach"><span class="glyphicon glyphicon-search"></span></button>
+						</div>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a class="login" data-toggle="modal" href='#modal-id'>Đăng nhập</a>
+							<div class="modal fade" id="modal-id">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<h4 class="modal-title">Modal title</h4>
+										</div>
+										<div class="modal-body">
+											<p>âsđâsda</p>
+											<p>âsđâsda</p>
+											<p>âsđâsda</p>
+											<p>âsđâsda</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary">Save changes</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<!-- Đã đăng nhập -->
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle login" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> Xin chào Mặt Than<b class="caret"></b></a>
+							<ul class="dropdown-menu dropdown-menu-user">
+								<li><a href="#"><span class="glyphicon glyphicon-info-sign"> </span> Thông tin tài khoản</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-ok"></span> Lịch sử mua hàng</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-heart"></span> Yêu thích</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="navbar-inverse">
+				<div class="container">
+					<div class="collapse navbar-collapse navbar-ex1-collapse">
+						<ul class="nav navbar-nav navbar-left nav-menu">
+							<li class="row-menu col-md-2 col-sm-2"><a href="#">Mua vé</a></li>
+							<li class="row-menu col-md-2 col-sm-2 dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Phim <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Đang chiếu</a></li>
+									<li><a href="#">Sắp chiếu</a></li>
+								</ul>
+							</li>
+							<li class="row-menu col-md-2 col-sm-2 dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Sự kiện <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Khuyến mãi</a></li>
+									<li><a href="#">Phim hot</a></li>
+								</ul>
+							</li>
+							<li class="row-menu col-md-2 col-sm-2"><a href="#">Rạp/Giá vé</a></li>
+							<li class="row-menu col-md-2 col-sm-2"><a href="#">Hỗ trợ</a></li>
+							<li class="row-menu col-md-2 col-sm-2"><a href="#">Thành viên</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main class="main">
+		<div id="carousel-id" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-id" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-id" data-slide-to="1" class=""></li>
+				<li data-target="#carousel-id" data-slide-to="2" class=""></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="item">
+					<img src="img/95e8772d6a5e7272eb943af0fc2daf990cf3d47d324a5a425apimgpsh-fullsize-distr_1541062154206.jpg">
+					<a href="" class="btn-play"><span class="glyphicon glyphicon-play"></span></a>
+				</div>
+				<div class="item">
+					<img src="img/f1d08c139ae51f57cb50041aff0f848a894bf7c77740a10317pimgpsh-fullsize-distr_1541125500099.jpg">
+					<a href="" class="btn-play"><span class="glyphicon glyphicon-play"></span></a>
+				</div>
+				<div class="item active">
+					<img src="img/banner-t03-2048-x-682_1541043283213.jpg">
+					<a href="" class="btn-play"><span class="glyphicon glyphicon-play"></span></a>
+				</div>
+			</div>
+			<a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+			<a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+		</div>
+
+		<div class="container">
+			<div role="tabpanel" class="tab-film">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active">
+						<a href="#home" aria-controls="home" role="tab" data-toggle="tab" class="tab-a">PHIM ĐANG CHIẾU</a>
+					</li>
+					<li role="presentation">
+						<a href="#tab" aria-controls="tab" role="tab" data-toggle="tab" class="tab-a">PHIM SẮP CHIẾU</a>
+					</li>
+				</ul>
+				<!-- Phim đang chiếu -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active row" id="home">
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<div class="thumbnail">
+								<img src="img/products/1000x700-movie15654postersrampant-hk-2_1541238785859.jpg" alt="">
+								<div class="thumbnail-content">
+									<a href="" class="btn-sale">MUA VÉ</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<div class="thumbnail">
+								<img src="img/products/1180w-600h-101518-event-nutcracker-screenings-780x440_1539847772783.jpg" alt="">
+								<div class="thumbnail-content">
+									<a href="" class="btn-sale">MUA VÉ</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<div class="thumbnail">
+								<img src="img/products/11_1541146836646.jpg" alt="">
+								<div class="thumbnail-content">
+									<a href="" class="btn-sale">MUA VÉ</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<div class="thumbnail">
+								<img src="img/products/450x300_1539141360908.jpg" alt="">
+								<div class="thumbnail-content">
+									<a href="" class="btn-sale">MUA VÉ</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<div class="thumbnail">
+								<img src="img/products/fantastic-beasts-tcog--vietnamese-poster-2_1540438759380.jpg" alt="">
+								<div class="thumbnail-content">
+									<a href="" class="btn-sale">MUA VÉ</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<div class="thumbnail">
+								<img src="img/products/matvugiaicuu4_1540456717466.jpg" alt="">
+								<div class="thumbnail-content">
+									<a href="" class="btn-sale">MUA VÉ</a>
+								</div>
+							</div>
+						</div>
+						<a class="btn-view" href="#">XEM THÊM <span class="glyphicon glyphicon-arrow-right span-arrow"></span></a>
+					</div>
+					<!-- Phim sắp chiếu -->
+					<div role="tabpanel" class="tab-pane row" id="tab">
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<div class="thumbnail">
+								<img src="img/products/gnch-intl-annoyed-1024x768px-dinth-vie_1537848953171.png" alt="">
+								<div class="thumbnail-content">
+									<a href="" class="btn-info">THÔNG TIN</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<div class="thumbnail">
+								<img src="img/products/huyenthoaingoisaonhacrock5_1538366431544.jpg" alt="">
+								<div class="thumbnail-content">
+									<a href="" class="btn-info">THÔNG TIN</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<div class="thumbnail">
+								<img src="img/products/key-art-m21-final---part-1-04_1541128402387.jpg" alt="">
+								<div class="thumbnail-content">
+									<a href="" class="btn-info">THÔNG TIN</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<div class="thumbnail">
+								<img src="img/products/mv5byjkzyzringutywy3zc00yzewlwe4mzgtzgiwyjixnjq2ntgzxkeyxkfqcgdeqxvymtmzodgxmji--v1-_1540798781506.jpg" alt="">
+								<div class="thumbnail-content">
+									<a href="" class="btn-info">THÔNG TIN</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<div class="thumbnail">
+								<img src="img/products/thach-thao-banner_1538640868652.jpg" alt="">
+								<div class="thumbnail-content">
+									<a href="" class="btn-info">THÔNG TIN</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<div class="thumbnail">
+								<img src="img/products/thegirl3_1540373496429.jpg" alt="">
+								<div class="thumbnail-content">
+									<a href="" class="btn-info">THÔNG TIN</a>
+								</div>
+							</div>
+						</div>
+						<a class="btn-view" href="#">XEM THÊM <span class="glyphicon glyphicon-arrow-right span-arrow"></span></a>
+					</div>
+				</div>
+			</div>
+			<!-- Review -->
+			<div class="film-comment row">
+				<div class="row">
+					<!-- Binh luận phim-->
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<div class="film-comment-header"><a href="">BÌNH LUẬN PHIM</a></div>
+						<!-- Row1 -->
+						<div class="row-comment">
+							<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5 row-comment-img">
+								<img src="img/products/cmt1.jpg" alt="">
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-7 col-lg-7">
+								<div class="row-comment-header" title="[Review] Bad Times At The El Royale: Trải Nghiệm Kinh Hoàng Ở Khách Sạn Hạng Sang">
+									<a href="">[Review] Bad Times At The El Royale: Trải Nghiệm Kinh Hoàng Ở Khách Sạn Hạng Sang</a>
+								</div>
+								<div class="row-comment-middle d-flex">
+									<div class="icon-like">
+										<a href="" class="active"><span class="glyphicon glyphicon-thumbs-up"></span> Thích 18k</a>
+									</div>
+									<div class="icon-view">
+										<span class="glyphicon glyphicon-eye-open"></span> 1000
+									</div>
+									<div class="icon-star">
+										<div>0</div>
+									</div>
+								</div>
+								<div class="row-comment-bottom" title="Kể cả khi chiếc quần sắp tụt và mấy múi cơ bụng “thần thánh” của Chris Hemsworth không đủ hấp dẫn bạn, Bad Times At The El Royale vẫn là một bộ phim hay đáng xem.">
+									<span style="line-height:107%">Kể cả khi chiếc quần sắp tụt và mấy múi cơ bụng “thần thánh” của Chris Hemsworth không đủ hấp dẫn bạn, <b>Bad Times At The El Royale</b> vẫn là một bộ <i>phim hay</i> đáng xem.</span>
+								</div>
+							</div>
+						</div>
+						<!-- End row -->
+						<!-- Row1 -->
+						<div class="row-comment">
+							<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5 row-comment-img">
+								<img src="img/products/cmt1.jpg" alt="">
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-7 col-lg-7">
+								<div class="row-comment-header" title="[Review] Bad Times At The El Royale: Trải Nghiệm Kinh Hoàng Ở Khách Sạn Hạng Sang">
+									<a href="">[Review] Bad Times At The El Royale: Trải Nghiệm Kinh Hoàng Ở Khách Sạn Hạng Sang</a>
+								</div>
+								<div class="row-comment-middle d-flex">
+									<div class="icon-like">
+										<a href="" class="active"><span class="glyphicon glyphicon-thumbs-up"></span> Thích 18</a>
+									</div>
+									<div class="icon-view">
+										<span class="glyphicon glyphicon-eye-open"></span> 1000
+									</div>
+									<div class="icon-star">
+										<div>0</div>
+									</div>
+								</div>
+								<div class="row-comment-bottom" title="Kể cả khi chiếc quần sắp tụt và mấy múi cơ bụng “thần thánh” của Chris Hemsworth không đủ hấp dẫn bạn, Bad Times At The El Royale vẫn là một bộ phim hay đáng xem.">
+									<span style="line-height:107%">Kể cả khi chiếc quần sắp tụt và mấy múi cơ bụng “thần thánh” của Chris Hemsworth không đủ hấp dẫn bạn, <b>Bad Times At The El Royale</b> vẫn là một bộ <i>phim hay</i> đáng xem.</span>
+								</div>
+							</div>
+						</div>
+						<!-- End row -->
+						<!-- Row1 -->
+						<div class="row-comment">
+							<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5 row-comment-img">
+								<img src="img/products/cmt1.jpg" alt="">
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-7 col-lg-7">
+								<div class="row-comment-header" title="[Review] Bad Times At The El Royale: Trải Nghiệm Kinh Hoàng Ở Khách Sạn Hạng Sang">
+									<a href="">[Review] Bad Times At The El Royale: Trải Nghiệm Kinh Hoàng Ở Khách Sạn Hạng Sang</a>
+								</div>
+								<div class="row-comment-middle d-flex">
+									<div class="icon-like">
+										<a href="" class="active"><span class="glyphicon glyphicon-thumbs-up"></span> Thích 18</a>
+									</div>
+									<div class="icon-view">
+										<span class="glyphicon glyphicon-eye-open"></span> 1000
+									</div>
+									<div class="icon-star">
+										<div>0</div>
+									</div>
+								</div>
+								<div class="row-comment-bottom" title="Kể cả khi chiếc quần sắp tụt và mấy múi cơ bụng “thần thánh” của Chris Hemsworth không đủ hấp dẫn bạn, Bad Times At The El Royale vẫn là một bộ phim hay đáng xem.">
+									<span style="line-height:107%">Kể cả khi chiếc quần sắp tụt và mấy múi cơ bụng “thần thánh” của Chris Hemsworth không đủ hấp dẫn bạn, <b>Bad Times At The El Royale</b> vẫn là một bộ <i>phim hay</i> đáng xem.</span>
+								</div>
+							</div>
+						</div>
+						<!-- End row -->
+						<!-- Row1 -->
+						<div class="row-comment">
+							<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5 row-comment-img">
+								<img src="img/products/cmt1.jpg" alt="">
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-7 col-lg-7">
+								<div class="row-comment-header" title="[Review] Bad Times At The El Royale: Trải Nghiệm Kinh Hoàng Ở Khách Sạn Hạng Sang">
+									<a href="">[Review] Bad Times At The El Royale: Trải Nghiệm Kinh Hoàng Ở Khách Sạn Hạng Sang</a>
+								</div>
+								<div class="row-comment-middle d-flex">
+									<div class="icon-like">
+										<a href="" class="active"><span class="glyphicon glyphicon-thumbs-up"></span> Thích 18</a>
+									</div>
+									<div class="icon-view">
+										<span class="glyphicon glyphicon-eye-open"></span> 1000
+									</div>
+									<div class="icon-star">
+										<div>0</div>
+									</div>
+								</div>
+								<div class="row-comment-bottom" title="Kể cả khi chiếc quần sắp tụt và mấy múi cơ bụng “thần thánh” của Chris Hemsworth không đủ hấp dẫn bạn, Bad Times At The El Royale vẫn là một bộ phim hay đáng xem.">
+									<span style="line-height:107%">Kể cả khi chiếc quần sắp tụt và mấy múi cơ bụng “thần thánh” của Chris Hemsworth không đủ hấp dẫn bạn, <b>Bad Times At The El Royale</b> vẫn là một bộ <i>phim hay</i> đáng xem.</span>
+								</div>
+							</div>
+						</div>
+						<!-- End row -->
+					</div> <!-- End bình luận -->
+
+					<!-- Blog điện ảnh-->
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<div class="film-comment-header"><a href="">BLOG ĐIỆN ẢNH</a></div>
+						<!-- Row1 -->
+						<div class="row-comment">
+							<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5 row-comment-img">
+								<img src="img/blog1.jpg" alt="">
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-7 col-lg-7">
+								<div class="row-comment-header" title="Học Địa Lý Nước Mỹ Bằng Phim Kinh Dị - Phần 1">
+									<a href="">Học Địa Lý Nước Mỹ Bằng Phim Kinh Dị - Phần 1</a>
+								</div>
+								<div class="row-comment-middle d-flex">
+									<div class="icon-like">
+										<a href="" class="active"><span class="glyphicon glyphicon-thumbs-up"></span> Thích 18k</a>
+									</div>
+									<div class="icon-view">
+										<span class="glyphicon glyphicon-eye-open"></span> 1000
+									</div>
+								</div>
+								<div class="row-comment-bottom" title="Vừa xem các bộ phim kinh dị nổi tiếng vừa biết thêm về các bang của nước Mỹ. Một công mà đôi việc nhé! ">
+									<span style="line-height:107%">Vừa xem các bộ phim kinh dị nổi tiếng vừa biết thêm về các bang của nước Mỹ. Một công mà đôi việc nhé! </span>
+								</div>
+							</div>
+						</div>
+						<!-- End row -->
+						<!-- Row1 -->
+						<div class="row-comment">
+							<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5 row-comment-img">
+								<img src="img/blog1.jpg" alt="">
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-7 col-lg-7">
+								<div class="row-comment-header" title="Học Địa Lý Nước Mỹ Bằng Phim Kinh Dị - Phần 1">
+									<a href="">Học Địa Lý Nước Mỹ Bằng Phim Kinh Dị - Phần 1</a>
+								</div>
+								<div class="row-comment-middle d-flex">
+									<div class="icon-like">
+										<a href="" class=""><span class="glyphicon glyphicon-thumbs-up"></span> Thích 18k</a>
+									</div>
+									<div class="icon-view">
+										<span class="glyphicon glyphicon-eye-open"></span> 1000
+									</div>
+								</div>
+								<div class="row-comment-bottom" title="Vừa xem các bộ phim kinh dị nổi tiếng vừa biết thêm về các bang của nước Mỹ. Một công mà đôi việc nhé! ">
+									<span style="line-height:107%">Vừa xem các bộ phim kinh dị nổi tiếng vừa biết thêm về các bang của nước Mỹ. Một công mà đôi việc nhé! </span>
+								</div>
+							</div>
+						</div>
+						<!-- End row -->
+						<!-- Row1 -->
+						<div class="row-comment">
+							<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5 row-comment-img">
+								<img src="img/blog1.jpg" alt="">
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-7 col-lg-7">
+								<div class="row-comment-header" title="Học Địa Lý Nước Mỹ Bằng Phim Kinh Dị - Phần 1">
+									<a href="">Học Địa Lý Nước Mỹ Bằng Phim Kinh Dị - Phần 1</a>
+								</div>
+								<div class="row-comment-middle d-flex">
+									<div class="icon-like">
+										<a href="" class=""><span class="glyphicon glyphicon-thumbs-up"></span> Thích 18k</a>
+									</div>
+									<div class="icon-view">
+										<span class="glyphicon glyphicon-eye-open"></span> 1000
+									</div>
+								</div>
+								<div class="row-comment-bottom" title="Vừa xem các bộ phim kinh dị nổi tiếng vừa biết thêm về các bang của nước Mỹ. Một công mà đôi việc nhé! ">
+									<span style="line-height:107%">Vừa xem các bộ phim kinh dị nổi tiếng vừa biết thêm về các bang của nước Mỹ. Một công mà đôi việc nhé! </span>
+								</div>
+							</div>
+						</div>
+						<!-- End row -->
+						<!-- Row1 -->
+						<div class="row-comment">
+							<div class="col-xs-6 col-sm-6 col-md-5 col-lg-5 row-comment-img">
+								<img src="img/blog1.jpg" alt="">
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-7 col-lg-7">
+								<div class="row-comment-header" title="Học Địa Lý Nước Mỹ Bằng Phim Kinh Dị - Phần 1">
+									<a href="">Học Địa Lý Nước Mỹ Bằng Phim Kinh Dị - Phần 1</a>
+								</div>
+								<div class="row-comment-middle d-flex">
+									<div class="icon-like">
+										<a href="" class=""><span class="glyphicon glyphicon-thumbs-up"></span> Thích 18k</a>
+									</div>
+									<div class="icon-view">
+										<span class="glyphicon glyphicon-eye-open"></span> 1000
+									</div>
+								</div>
+								<div class="row-comment-bottom" title="Vừa xem các bộ phim kinh dị nổi tiếng vừa biết thêm về các bang của nước Mỹ. Một công mà đôi việc nhé! ">
+									<span style="line-height:107%">Vừa xem các bộ phim kinh dị nổi tiếng vừa biết thêm về các bang của nước Mỹ. Một công mà đôi việc nhé! </span>
+								</div>
+							</div>
+						</div>
+						<!-- End row -->	
+					</div> <!-- End blog -->
+				</div>
+			</div>
+
+
+			<!-- Tin tức khuyến mãi -->
+			<div class="news">
+				<div class="news-header">TIN KHUYẾN MÃI</div>
+				<!-- Row tin tức -->
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 promotion">
+						<div href="#" class="banner-promotion">
+							<img src="img/km/km1.jpg" alt="">
+							<div class="content-promotion">
+								<a href="#">
+									<h2>Đón Mùa Đông Cùng Combo The Grinch Xinh Lung Linh</h2>
+									<p><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:115%">Cùng <b>Galaxy Cinema</b> chào đón <strong>The Grinch</strong> bằng <b>Combo The Grinch</b> siêu lung linh – bình nước với hình dạng quả cầu tuyết.</span></span></span></p>
+									<button class="btn-view btn-view-news">CHI TIẾT</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- End row tin tức -->
+					<!-- Row tin tức -->
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 promotion">
+						<div href="#" class="banner-promotion">
+							<img src="img/km/km2.jpg" alt="">
+							<div class="content-promotion">
+								<a href="#">
+									<h2>Đón Mùa Đông Cùng Combo The Grinch Xinh Lung Linh</h2>
+									<p><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:115%">Cùng <b>Galaxy Cinema</b> chào đón <strong>The Grinch</strong> bằng <b>Combo The Grinch</b> siêu lung linh – bình nước với hình dạng quả cầu tuyết.</span></span></span></p>
+									<button class="btn-view btn-view-news">CHI TIẾT</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- End row tin tức -->
+					<!-- Row tin tức -->
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 promotion">
+						<div href="#" class="banner-promotion">
+							<img src="img/km/km3.jpg" alt="">
+							<div class="content-promotion">
+								<a href="#">
+									<h2>Đón Mùa Đông Cùng Combo The Grinch Xinh Lung Linh</h2>
+									<p><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:115%">Cùng <b>Galaxy Cinema</b> chào đón <strong>The Grinch</strong> bằng <b>Combo The Grinch</b> siêu lung linh – bình nước với hình dạng quả cầu tuyết.</span></span></span></p>
+									<button class="btn-view btn-view-news">CHI TIẾT</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- End row tin tức -->
+					<!-- Row tin tức -->
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 promotion">
+						<div href="#" class="banner-promotion">
+							<img src="img/km/km4.jpg" alt="">
+							<div class="content-promotion">
+								<a href="#">
+									<h2>Đón Mùa Đông Cùng Combo The Grinch Xinh Lung Linh</h2>
+									<p><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:115%">Cùng <b>Galaxy Cinema</b> chào đón <strong>The Grinch</strong> bằng <b>Combo The Grinch</b> siêu lung linh – bình nước với hình dạng quả cầu tuyết.</span></span></span></p>
+									<button class="btn-view btn-view-news">CHI TIẾT</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- End row tin tức -->
+					<!-- Row tin tức -->
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 promotion">
+						<div href="#" class="banner-promotion">
+							<img src="img/km/km5.jpg" alt="">
+							<div class="content-promotion">
+								<a href="#">
+									<h2>Đón Mùa Đông Cùng Combo The Grinch Xinh Lung Linh</h2>
+									<p><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:115%">Cùng <b>Galaxy Cinema</b> chào đón <strong>The Grinch</strong> bằng <b>Combo The Grinch</b> siêu lung linh – bình nước với hình dạng quả cầu tuyết.</span></span></span></p>
+									<button class="btn-view btn-view-news">CHI TIẾT</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- End row tin tức -->
+					<!-- Row tin tức -->
+					<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 promotion">
+						<div href="#" class="banner-promotion">
+							<img src="img/km/km6.jpg" alt="">
+							<div class="content-promotion">
+								<a href="#">
+									<h2>Đón Mùa Đông Cùng Combo The Grinch Xinh Lung Linh</h2>
+									<p><span style="font-size:14px;"><span style="font-family:Arial,Helvetica,sans-serif;"><span style="line-height:115%">Cùng <b>Galaxy Cinema</b> chào đón <strong>The Grinch</strong> bằng <b>Combo The Grinch</b> siêu lung linh – bình nước với hình dạng quả cầu tuyết.</span></span></span></p>
+									<button class="btn-view btn-view-news">CHI TIẾT</button>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- End row tin tức -->
+				</div>
+			</div>
+
+			<div class="about">
+				<div class="about-header">Demo Cinema</div>
+				<div class="about-content">
+					<p> </p>
+					<p><b>Demo Cinema</b> là một trong những công ty tư nhân đầu tiên về điện ảnh được thành lập từ năm 2003, đã khẳng định thương hiệu là 1 trong 10 địa điểm vui chơi giải trí được yêu thích nhất. Ngoài hệ thống rạp chiếu phim hiện đại, thu hút hàng triệu lượt người đến xem, <b>Demo Cinema</b> còn hấp dẫn khán giả bởi không khí thân thiện cũng như chất lượng dịch vụ hàng đầu.</p>
+
+					<p>Đến website galaxycine.vn, quý khách sẽ được cập nhật nhanh chóng các phim hay nhất phim mới nhất đang chiếu hoặc sắp chiếu. Lịch chiếu tại mọi hệ thống rạp chiếu phim của <b>Demo Cinema</b> cũng được cập nhật đầy đủ hàng ngày hàng giờ trên trang chủ.</p>
+
+					<p>Đặt vé tại <b>Demo Cinema</b> dễ dàng chỉ sau vài thao tác vô cùng đơn giản. Để mua vé, hãy vào tab Mua vé. Quý khách có thể chọn Mua vé theo phim, theo rạp, theo ngày tùy cách nào tiện lợi nhất cho bản thân.Sau đó, tiến hành mua vé theo các bước hướng dẫn. Chỉ trong vài phút, quý khách sẽ nhận được tin nhắn và email phản hồi Đặt vé thành công của <b>Demo Cinema</b>. Quý khách có thể dùng tin nhắn lấy vé tại quầy vé của <b>Demo Cinema</b> hoặc quét mã QR để một bước vào rạp mà không cần tốn thêm bất kỳ công đoạn nào nữa.</p>
+
+					<p>Nếu bạn đã chọn được phim hay để xem, hãy đặt vé cực nhanh bằng box Mua Vé Nhanh ngay từ Trang Chủ. Chỉ cần một phút, tin nhắn và email phản hồi của <b>Demo Cinema</b> sẽ gửi ngay vào điện thoại và hộp mail của bạn.</p>
+
+					<p>Nếu chưa quyết định sẽ xem phim mới nào, hãy tham khảo các bộ phim hay trong mục Phim Đang Chiếu cũng như Phim Sắp Chiếu tại rạp chiếu phim bằng cách vào mục Bình Luận Phim ở Góc Điện Ảnh để đọc những bài bình luận chân thật nhất, tham khảo và cân nhắc. Sau đó, quý khách hãy đặt vé bằng box Mua Vé Nhanh ngay ở đầu trang để chọn được suất chiếu và chỗ ngồi vừa ý nhất. </p>
+
+					<p><b>Demo Cinema</b> luôn có những chương trình khuyến mãi, ưu đãi, quà tặng vô cùng hấp dẫn như giảm giá vé, tặng vé xem phim miễn phí, tặng Combo, tặng quà phim…  dành cho quý khách.</p>
+
+					<p>Trang web galaxycine.vn còn có mục Góc Điện Ảnh - sở hữu lượng dữ liệu về phim, diễn viên và đạo diễn, giúp quý khách dễ dàng chọn được phim mình yêu thích và nâng cao kiến thức về điện ảnh của bản thân. Ngoài ra, vào mỗi tháng, <b>Demo Cinema</b> cũng giới thiệu các phim sắp chiếu hot nhất trong mục Phim Hay Tháng để quý khách sớm có sự tính toán.</p>
+
+					<p>Hiện nay, <b>Demo Cinema</b> đang ngày càng phát triển hơn nữa với các chương trình đặc sắc, các khuyến mãi hấp dẫn, đem đến cho khán giả những bộ phim bom tấn của thế giới và Việt Nam nhanh chóng và sớm nhất.</p>
+					<p> </p>
+				</div>
+			</div>
+		</div>
+		
+	</main>
+
+	<footer class="footer">	
+		<div class="container">
+			<!-- Start col -->
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+				<h1>Demo Cinema</h1>
+				<ul>
+					<li>
+						<a href=""><span class="glyphicon glyphicon-share-alt"></span> Giới Thiệu</a>
+					</li>
+					<li>
+						<a href=""><span class="glyphicon glyphicon-share-alt"></span> Tiện Ích</a>
+					</li>
+					<li>
+						<a href=""><span class="glyphicon glyphicon-share-alt"></span> Quà Tặng</a>
+					</li>
+					<li>
+						<a href=""><span class="glyphicon glyphicon-share-alt"></span> Tuyển Dụng</a>
+					</li>
+					<li>
+						<a href=""><span class="glyphicon glyphicon-share-alt"></span> Liên Hệ Quảng Cáo</a>
+					</li>
+				</ul>
+			</div>
+			<!-- End col -->
+			<!-- Start col -->
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+				<h1>Điều khoản sử dụng</h1>
+				<ul>
+					<li>
+						<a href=""><span class="glyphicon glyphicon-share-alt"></span> Điều Khoản Chung</a>
+					</li>
+					<li>
+						<a href=""><span class="glyphicon glyphicon-share-alt"></span> Điều Khoản Giao Dịch</a>
+					</li>
+					<li>
+						<a href=""><span class="glyphicon glyphicon-share-alt"></span> Chính Sách Thanh Toán</a>
+					</li>
+					<li>
+						<a href=""><span class="glyphicon glyphicon-share-alt"></span> Chính Sách Bảo Mật</a>
+					</li>
+					<li>
+						<a href=""><span class="glyphicon glyphicon-share-alt"></span> Câu Hỏi Thường Gặp</a>
+					</li>
+				</ul>
+			</div>
+			<!-- End col -->
+			<!-- Start col -->
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+				<h1>Hỗ trợ</h1>
+				<ul>
+					<li>
+						<a href=""><span class="glyphicon glyphicon-share-alt"></span> Hotline: 1900 0000</a>
+					</li>
+					<li>
+						<a href=""><span class="glyphicon glyphicon-share-alt"></span> Giờ Làm Việc: 8:00 - 22:00</a>
+					</li>
+					<li>
+						<a href=""><span class="glyphicon glyphicon-share-alt"></span> Giá Vé</a>
+					</li>
+					<li>
+						<a href=""><span class="glyphicon glyphicon-share-alt"></span> Khuyến Mãi</a>
+					</li>
+					<li>
+						<a href=""><span class="glyphicon glyphicon-share-alt"></span> Góp Ý</a>
+					</li>
+				</ul>
+			</div>
+			<!-- End col -->
+			<!-- Start col -->
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+				<h1>Kết nối với chúng tôi</h1>
+				<ul class="connect">
+					<li>
+						<a href="" class="follow-fb"></a>
+					</li>
+					<li>
+						<a href="" class="follow-yt"></a>
+					</li>
+					<li>
+						<a href="" class="follow-ln"></a>
+					</li>
+					<li>
+						<a href="" class="follow-it"></a>
+					</li>
+					<li>
+						<a href="" class="follow-zl"></a>
+					</li>
+				</ul>
+			</div>
+			<!-- End col -->
+		</div>
+	</footer>
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

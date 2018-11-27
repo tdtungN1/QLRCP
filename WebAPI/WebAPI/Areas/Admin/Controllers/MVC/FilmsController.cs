@@ -10,107 +10,99 @@ using WebAPI.Models;
 
 namespace WebAPI.Areas.Admin.Controllers.MVC
 {
-    public class Genre_chairController : Controller
+    public class FilmsController : Controller
     {
         private QLRCP db = new QLRCP();
 
-        // GET: Admin/Genre_chair
+        // GET: Admin/Films
         public ActionResult Index()
         {
-            return View(db.Genre_chair.ToList());
+            return View(db.Films.ToList());
         }
 
-        // GET: Admin/Genre_chair/Details/5
+        // GET: Admin/Films/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Genre_chair genre_chair = db.Genre_chair.Find(id);
-            if (genre_chair == null)
+            Film film = db.Films.Find(id);
+            if (film == null)
             {
                 return HttpNotFound();
             }
-            return View(genre_chair);
+            return View(film);
         }
 
-        // GET: Admin/Genre_chair/Create
+        // GET: Admin/Films/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/Genre_chair/Create
+        // POST: Admin/Films/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "GenreChairID,GenreChairName")] Genre_chair genre_chair)
+        public ActionResult Create([Bind(Include = "FilmID,FilmName,Author,Producer,ReleaseDate,Nation,Description,Rated,Actor")] Film film)
         {
             if (ModelState.IsValid)
             {
-                db.Genre_chair.Add(genre_chair);
+                db.Films.Add(film);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(genre_chair);
+            return View(film);
         }
 
-        // GET: Admin/Genre_chair/Edit/5
+        // GET: Admin/Films/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Genre_chair genre_chair = db.Genre_chair.Find(id);
-            if (genre_chair == null)
-            {
-                return HttpNotFound();
-            }
-            return View(genre_chair);
+            ViewBag.id = id;
+            return View();
         }
 
-        // POST: Admin/Genre_chair/Edit/5
+        // POST: Admin/Films/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "GenreChairID,GenreChairName")] Genre_chair genre_chair)
+        public ActionResult Edit([Bind(Include = "FilmID,FilmName,Author,Producer,ReleaseDate,Nation,Description,Rated,Actor")] Film film)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(genre_chair).State = EntityState.Modified;
+                db.Entry(film).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(genre_chair);
+            return View(film);
         }
 
-        // GET: Admin/Genre_chair/Delete/5
+        // GET: Admin/Films/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Genre_chair genre_chair = db.Genre_chair.Find(id);
-            if (genre_chair == null)
+            Film film = db.Films.Find(id);
+            if (film == null)
             {
                 return HttpNotFound();
             }
-            return View(genre_chair);
+            return View(film);
         }
 
-        // POST: Admin/Genre_chair/Delete/5
+        // POST: Admin/Films/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Genre_chair genre_chair = db.Genre_chair.Find(id);
-            db.Genre_chair.Remove(genre_chair);
+            Film film = db.Films.Find(id);
+            db.Films.Remove(film);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

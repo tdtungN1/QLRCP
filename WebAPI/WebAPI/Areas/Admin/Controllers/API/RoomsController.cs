@@ -40,7 +40,7 @@ namespace WebAPI.Areas.Admin.Controllers
         // GET: api/Rooms/5
         public Room Get(int id)
         {
-            string query = "SELECT r.* , gr.GenreRoomName FROM dbo.Room r JOIN  dbo.Genre_room gr ON gr.GenreRoomID = r.GenreRoomID WHERE r.RoomID = "+id;
+            string query = "SELECT r.* , gr.GenreRoomName FROM dbo.Room r JOIN  dbo.Genre_room gr ON gr.GenreRoomID = r.GenreRoomID WHERE r.RoomID = " + id;
             DataTable table = DataProvider.Instace.ExecuteQuery(query);
             Room room = new Room();
             room.RoomID = int.Parse(table.Rows[0]["RoomID"].ToString());
@@ -52,11 +52,51 @@ namespace WebAPI.Areas.Admin.Controllers
             room.Genre_room = genre_Room;
             return room;
         }
-        // POST: api/RoomAPI
-        public void Post([FromBody]Room value)
+        // POST: api/Rooms
+        public int Post([FromBody]Room value)
         {
-
+            string query = "INSERT dbo.Room(RoomName,GenreRoomID,StatusRoom,NumRow,NumCol)VALUES(N'" + value.RoomName + "'," + value.GenreRoomID + "," + value.StatusRoom + "," + value.NumRow + "," + value.NumCol + ")";
+            try
+            {
+                int res = DataProvider.Instace.ExecuteNonQuery(query);
+            }
+            catch (SqlException)
+            {
+                return 0;
+            }
+            string query1 = "SELECT IDENT_CURRENT('dbo.Room') AS 'top'";
+            DataTable table = DataProvider.Instace.ExecuteQuery(query1);
+            return int.Parse(table.Rows[0][0].ToString());
         }
         //
+        // PUT: api/Rooms/5
+        public int Put(int id, [FromBody]Room value)
+        {
+            string query = "UPDATE dbo.Room SET RoomName = N'"+value.RoomName+"', GenreRoomID = "+value.GenreRoomID+",StatusRoom="+value.StatusRoom+",NumRow="+value.NumRow+",NumCol="+value.NumCol+" WHERE RoomID =" + id;
+            try
+            {
+                int res = DataProvider.Instace.ExecuteNonQuery(query);
+            }
+            catch (SqlException)
+            {
+                return 0;
+            }
+            return 1;
+        }
+
+        // DELETE: api/Rooms/5
+        public int Delete(int id)
+        {
+            string query = "DELETE  dbo.Room WHERE RoomID = " + id;
+            try
+            {
+                int res = DataProvider.Instace.ExecuteNonQuery(query);
+            }
+            catch (SqlException)
+            {
+                return 0;
+            }
+            return 1;
+        }
     }
 }

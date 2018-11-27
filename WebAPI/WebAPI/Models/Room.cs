@@ -15,16 +15,6 @@ namespace WebAPI.Models
             Chairs = new HashSet<Chair>();
         }
 
-        public Room(int roomID, string roomName, int genreRoomID, byte statusRoom, ICollection<Chair> chairs, Genre_room genre_room)
-        {
-            RoomID = roomID;
-            RoomName = roomName;
-            GenreRoomID = genreRoomID;
-            StatusRoom = statusRoom;
-            Chairs = chairs;
-            Genre_room = genre_room;
-        }
-
         public int RoomID { get; set; }
 
         [Required]
@@ -34,6 +24,10 @@ namespace WebAPI.Models
         public int GenreRoomID { get; set; }
 
         public byte StatusRoom { get; set; }
+
+        public int? NumRow { get; set; }
+
+        public int? NumCol { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Chair> Chairs { get; set; }
