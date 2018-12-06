@@ -19,19 +19,19 @@ namespace WebAPI.Models
         public int FilmID { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(255)]
         public string FilmName { get; set; }
 
-        [StringLength(50)]
+        [StringLength(255)]
         public string Author { get; set; }
 
-        [StringLength(30)]
+        [StringLength(255)]
         public string Producer { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? ReleaseDate { get; set; }
 
-        [StringLength(30)]
+        [StringLength(50)]
         public string Nation { get; set; }
 
         [Column(TypeName = "text")]
@@ -41,6 +41,8 @@ namespace WebAPI.Models
 
         [StringLength(200)]
         public string Actor { get; set; }
+
+        public byte? Status { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Film_GenreFilm> Film_GenreFilm { get; set; }

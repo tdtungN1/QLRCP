@@ -26,11 +26,6 @@ namespace WebAPI.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Chair>()
-                .HasMany(e => e.Tickets)
-                .WithRequired(e => e.Chair)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Customer>()
                 .Property(e => e.Phone)
                 .IsUnicode(false);
@@ -38,36 +33,6 @@ namespace WebAPI.Models
             modelBuilder.Entity<Film>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<Film>()
-                .HasMany(e => e.Film_GenreFilm)
-                .WithRequired(e => e.Film)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Film>()
-                .HasMany(e => e.Tickets)
-                .WithRequired(e => e.Film)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Genre_chair>()
-                .HasMany(e => e.Chairs)
-                .WithRequired(e => e.Genre_chair)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Genre_film>()
-                .HasMany(e => e.Film_GenreFilm)
-                .WithRequired(e => e.Genre_film)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Genre_room>()
-                .HasMany(e => e.Rooms)
-                .WithRequired(e => e.Genre_room)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Room>()
-                .HasMany(e => e.Chairs)
-                .WithRequired(e => e.Room)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<User>()
                 .Property(e => e.username)
@@ -82,9 +47,9 @@ namespace WebAPI.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<User>()
-                .HasMany(e => e.Tickets)
-                .WithRequired(e => e.User)
-                .WillCascadeOnDelete(false);
+                .HasMany(e => e.Customers)
+                .WithOptional(e => e.User)
+                .WillCascadeOnDelete();
         }
     }
 }

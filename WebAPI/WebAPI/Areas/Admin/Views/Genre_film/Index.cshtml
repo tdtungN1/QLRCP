@@ -1,11 +1,11 @@
-﻿@model IEnumerable<WebAPI.Models.Room>
+﻿@model IEnumerable<WebAPI.Models.Genre_film>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Phòng</h2>
+<h2>Loại phim</h2>
 
 <p>
     @Html.ActionLink("Thêm mới", "Create")
@@ -14,23 +14,21 @@
     <thead>
         <tr>
             <th>
-                Mã phòng
+                Mã loại phim
             </th>
             <th>
-                Tên phòng
+                Tên loại phim
             </th>
-            <th>
-                Loại phòng
-            </th>
-            <th>Trạng thái</th>
             <th></th>
         </tr>
     </thead>
-    <tbody id="tbody-room"></tbody>
+    <tbody class="tbody-genre-film">
+
+    </tbody>
+
 </table>
 <script type="text/javascript">
     $(document).ready(function () {
-        LoadDataRoom();
+        LoadDataGenreFilm();
     })
 </script>
-

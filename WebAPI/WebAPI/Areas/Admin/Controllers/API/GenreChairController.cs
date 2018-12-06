@@ -43,7 +43,7 @@ namespace WebAPI.Areas.Admin.Controllers.API
         {
             string query = "INSERT dbo.Genre_chair(GenreChairName)VALUES (N'" + value.GenreChairName + ")";
             int table = DataProvider.Instace.ExecuteNonQuery(query);
-            return
+            return 1;
         }
 
         // PUT: api/GenreChair/5

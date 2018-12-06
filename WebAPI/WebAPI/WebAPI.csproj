@@ -175,9 +175,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\API\ChairController.cs" />
+    <Compile Include="Areas\Admin\Controllers\API\FilmController.cs" />
+    <Compile Include="Areas\Admin\Controllers\API\Film_GenreFilmController.cs" />
     <Compile Include="Areas\Admin\Controllers\API\GenreChairController.cs" />
     <Compile Include="Areas\Admin\Controllers\API\GenreRoomController.cs" />
+    <Compile Include="Areas\Admin\Controllers\API\Genre_filmController.cs" />
     <Compile Include="Areas\Admin\Controllers\MVC\FilmsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MVC\Genre_filmController.cs" />
     <Compile Include="Areas\Admin\Controllers\MVC\Genre_roomController.cs" />
     <Compile Include="Areas\Admin\Controllers\MVC\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\API\RoomsController.cs" />
@@ -255,6 +259,7 @@
     <Content Include="Content\js\easypiechart.js" />
     <Content Include="Content\js\function.js" />
     <Content Include="Content\js\html5shiv.min.js" />
+    <Content Include="Content\js\Script.js" />
     <Content Include="Content\js\jquery-ui.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\jquery.nestable.js" />
@@ -300,6 +305,9 @@
     <Content Include="Areas\Admin\Views\Films\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Films\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Films\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Genre_film\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Genre_film\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Genre_film\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

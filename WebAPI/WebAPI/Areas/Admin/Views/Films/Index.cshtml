@@ -5,72 +5,47 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Phim</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm mới", "Create")
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FilmName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Author)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Producer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReleaseDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nation)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rated)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Actor)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FilmName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Author)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Producer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReleaseDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nation)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rated)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Actor)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FilmID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.FilmID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.FilmID })
-        </td>
-    </tr>
-}
-
+    <thead>
+        <tr>
+            <th>
+                Tên phim
+            </th>
+            <th>
+                Đạo diễn
+            </th>
+            <th style="width:300px;">
+                Nhà sản xuất
+            </th>
+            <th>
+                Ngày khởi chiếu
+            </th>
+            <th>
+                Quốc gia
+            </th>
+            <th>
+                Đánh giá
+            </th>
+            <th width="150px">
+                Diễn viên
+            </th>
+            <th>
+                Trạng thái
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="tbody-film">
+        
+    </tbody>
 </table>
+<script type="text/javascript">
+    $(document).ready(function () {
+        LoadDataFilm();
+    })
+</script>

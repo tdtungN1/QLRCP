@@ -15,72 +15,77 @@
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>Phòng</h4>
-    <hr />
-    <input type="hidden" name="RoomID" value="@Model.RoomID" />
-    <div class="col-md-4">
-        <div class="form-group col-md-12 ">
-            <label class="" for="">Tên phòng</label>
-            <input type="text" name="RoomName" class="form-control" id="" placeholder="Tên phòng" value="@Model.RoomName">
+    <div class="form-horizontal">
+        <h4>Phòng</h4>
+        <hr />
+        <input type="hidden" name="RoomID" value="@Model.RoomID" />
+        <div class="col-md-4">
+            <div class="form-group col-md-12 ">
+                <label class="" for="">Tên phòng</label>
+                <input type="text" name="RoomName" class="form-control" id="" placeholder="Tên phòng" value="@Model.RoomName">
+            </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <div class="form-group col-md-12">
-            <label class="" for="">Loại phòng</label>
-            <div class="d-flex">
-                <select name="GenreRoomID" class="form-control select-genre-room" required="required" valuecheck="@Model.GenreRoomID"></select>
-                <a class="btn btn-default btn-add-quick" data-toggle="modal" href='#modal-add-genre-room' style="font-weight:bold;">+</a>
-                @* Modal add genre Room *@
-                <div class="modal fade" id="modal-add-genre-room">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title">Thêm loại phòng</h4>
-                            </div>
-                            <div class="modal-body">
-                                <label>Tên loại phòng</label>
-                                <input type="text" name="GenreRoomName" class="form-control" value="" />
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" id="add-new-genre-room">Lưu</button>
+        <div class="col-md-4">
+            <div class="form-group col-md-12">
+                <label class="" for="">Loại phòng</label>
+                <div class="d-flex">
+                    <select name="GenreRoomID" class="form-control select-genre-room" required="required" valuecheck="@Model.GenreRoomID"></select>
+                    <a class="btn btn-default btn-add-quick" data-toggle="modal" href='#modal-add-genre-room' style="font-weight:bold;">+</a>
+                    @* Modal add genre Room *@
+                    <div class="modal fade" id="modal-add-genre-room">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Thêm loại phòng</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <label>Tên loại phòng</label>
+                                    <input type="text" name="GenreRoomName" class="form-control" value="" />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" id="add-new-genre-room">Lưu</button>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    @* End modal *@
                 </div>
-                @* End modal *@
             </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <div class="form-group col-md-12">
-            <label class="" for="">Trạng thái</label>
-            <div class="radio">
-                <label for="st-true"><input type="radio" name="StatusRoom" value="1" id="st-true" @ViewBag.check1 /> Kích hoạt</label>
-                <label for="st-false"><input type="radio" name="StatusRoom" value="0" id="st-false" @ViewBag.check0 /> Không kích hoạt</label>
+        <div class="col-md-4">
+            <div class="form-group col-md-12">
+                <label class="" for="">Trạng thái</label>
+                <div class="radio">
+                    <label for="st-true"><input type="radio" name="StatusRoom" value="1" id="st-true" @ViewBag.check1 /> Kích hoạt</label>
+                    <label for="st-false"><input type="radio" name="StatusRoom" value="0" id="st-false" @ViewBag.check0 /> Không kích hoạt</label>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="ui-helper-clearfix"></div>
-    <div class="col-md-12">
-        <div class="form-group col-md-12">
-            <label class="" for="">Bố trí phòng</label>
-            <br />
-            <label>Số hàng :</label> <input type="number" name="max-row" value="@Model.NumRow" max="26" class="i-number-room room-row" />
-            <label>Số dãy: </label> <input type="number" name="max-col" value="@Model.NumCol" max="50" class="i-number-room room-col" />
+        <div class="ui-helper-clearfix"></div>
+        <div class="col-md-12">
+            <div class="form-group col-md-12">
+                <label class="" for="">Bố trí phòng</label>
+                <br />
+                <label>Số hàng :</label> <input type="number" name="max-row" value="@Model.NumRow" max="26" class="i-number-room room-row" />
+                <label>Số dãy: </label> <input type="number" name="max-col" value="@Model.NumCol" max="50" class="i-number-room room-col" />
+            </div>
         </div>
+        <div class="col-md-12 form-group">
+            <button type="button" class="btn btn-primary btn-view-room" onclick="BtnViewRoom_Click()">Xem phòng</button>
+        </div>
+        <table class="view-room"></table>
+        <div class="col-md-12 form-group">
+            <button type="button" class="btn btn-success" id="btn-edit-room" style="display:none!important;" onclick="BtnEditRoom_Click()">Sửa phòng</button>
+        </div>
+        <div class="ui-helper-clearfix"></div>
     </div>
-    <div class="col-md-12 form-group">
-        <button type="button" class="btn btn-primary btn-view-room" onclick="BtnViewRoom_Click()">Xem phòng</button>
-    </div>
-    <table class="view-room"></table>
-    <div class="col-md-12 form-group">
-        <button type="button" class="btn btn-success" id="btn-edit-room" style="display:none!important;" onclick="BtnEditRoom_Click()">Sửa phòng</button>
-    </div>
-    <div class="ui-helper-clearfix"></div>
-</div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            SelectGenreRoom();
+        })
+    </script>
 }
 
 
