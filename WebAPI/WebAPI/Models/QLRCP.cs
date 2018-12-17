@@ -36,6 +36,14 @@ namespace WebAPI.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Film>()
+                .Property(e => e.Images)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Film>()
+                .Property(e => e.Trailer)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Film>()
                 .HasMany(e => e.ShowTimes)
                 .WithRequired(e => e.Film)
                 .WillCascadeOnDelete(false);

@@ -237,7 +237,7 @@ function BtnEditFilm_Click() {
     var Nation = $("input[name = 'Nation']").val();
     var Rated = $("input[name = 'Rated']").val();
     var Actor = $("input[name = 'Actor']").val();
-    var Status = 2;
+    var Status = 0;
     $("input[name = 'Status']").each(function () {
         if ($(this).is(":checked")) {
             Status = $(this).val();
@@ -255,7 +255,7 @@ function BtnEditFilm_Click() {
     //Sửa phim
     $.ajax({
         type: "PUT",
-        url: "/api/Film",
+        url: "/api/Film/" + FilmID,
         data: JSON.stringify(film),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -363,7 +363,7 @@ function BtnAddGenreFilm_Click() {
     })
 }
 
-//
+//Thêm phim
 function BtnAddFilm_Click() {
     var FilmName = $("input[name = 'FilmName']").val();
     var Author = $("input[name = 'Author']").val();
@@ -372,13 +372,12 @@ function BtnAddFilm_Click() {
     var Nation = $("input[name = 'Nation']").val();
     var Rated = $("input[name = 'Rated']").val();
     var Actor = $("input[name = 'Actor']").val();
-    var Status = 2;
+    //Mặc định thêm phim là sắp chiếu.
+    var Status = 0;
     var Description = $("textarea[name = 'Description']").val();
     var film = { FilmName: FilmName, Author: Author, Producer: Producer, ReleaseDate: ReleaseDate, Nation: Nation, Rated: Rated, Actor: Actor, Status: Status, Description: Description }
     var genreFilm = [];
-
-
-    //Thêm mới phòng
+    //Thêm mới phim
     $.ajax({
         type: "POST",
         url: "/api/Film",
@@ -397,7 +396,7 @@ function BtnAddFilm_Click() {
                         genreFilm.push(obj);
                     }
                 })
-                //Thêm loại phòng
+                //Thêm loại phim
                 $.ajax({
                     type: "POST",
                     url: "/api/Film_GenreFilm",
@@ -405,12 +404,6 @@ function BtnAddFilm_Click() {
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (res) {
-                        if (res == 0) {
-                            alert("Thêm thất bại");
-                        }
-                        else {
-                            alert("Thêm loai thành công!");
-                        }
                     }
                 });
                 location.href = "/Admin/Films/Index";
@@ -591,8 +584,4 @@ function CheckBoxGenreFilm(id) {
             }
         });
     }
-}
-
-function RadioStatusFilm(value) {
-    
 }

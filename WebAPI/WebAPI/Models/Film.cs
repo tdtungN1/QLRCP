@@ -1,4 +1,4 @@
-﻿namespace WebAPI.Models
+namespace WebAPI.Models
 {
     using System;
     using System.Collections.Generic;
@@ -42,12 +42,13 @@
         [StringLength(200)]
         public string Actor { get; set; }
 
-        /// <summary>
-        /// 0:Sắp chiếu.
-        /// 1:Đang chiếu.
-        /// 2:NGừng chiếu
-        /// </summary>
         public byte? Status { get; set; }
+
+        [StringLength(255)]
+        public string Images { get; set; }
+
+        [StringLength(255)]
+        public string Trailer { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Film_GenreFilm> Film_GenreFilm { get; set; }

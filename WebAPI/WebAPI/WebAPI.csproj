@@ -246,6 +246,7 @@
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\StyleBack.css" />
     <Content Include="Content\css\_all-skins.min.css" />
+    <Content Include="Content\images\smallfoot_vietnamese_poster240.jpg" />
     <Content Include="Content\js\ajax.js" />
     <Content Include="Content\js\angular.min.js" />
     <Content Include="Content\js\app.js" />
@@ -332,7 +333,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Content\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

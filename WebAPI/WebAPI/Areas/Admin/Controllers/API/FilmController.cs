@@ -101,7 +101,7 @@ namespace WebAPI.Areas.Admin.Controllers.API
         // POST: api/Film
         public int Post([FromBody]Film value)
         {
-            string query = "INSERT dbo.Film(FilmName,Author,Producer,ReleaseDate,Nation,Description,Rated,Actor,Status)VALUES(N'" + value.FilmName + "',N'" + value.Author + "',N'" + value.Producer + "','" + value.ReleaseDate + "',N'" + value.Nation + "','" + value.Description + "'," + value.Rated + ",N'" + value.Actor + "'," + value.Status + ")";
+            string query = "INSERT dbo.Film(FilmName,Author,Producer,ReleaseDate,Nation,Description,Rated,Actor,Status)VALUES(N'" + value.FilmName + "',N'" + value.Author + "',N'" + value.Producer + "','" + value.ReleaseDate + "',N'" + value.Nation + "',N'" + value.Description + "'," + value.Rated + ",N'" + value.Actor + "'," + value.Status + ")";
             try
             {
                 int res = DataProvider.Instace.ExecuteNonQuery(query);
@@ -118,7 +118,7 @@ namespace WebAPI.Areas.Admin.Controllers.API
         // PUT: api/Film/5
         public int Put(int id, [FromBody]Film value)
         {
-            string query = "UPDATE dbo.Film SET FilmName = N'" + value.FilmName + "', Author = N'" + value.Author + "', Producer=N'" + value.Nation + "',ReleaseDate='" + value.ReleaseDate + "',Description=" + value.Description + ",Rated="+value.Rated+ ",Actor=N'"+value.Actor+ "',Status="+value.Status+" WHERE FilmID =" + id;
+            string query = "UPDATE dbo.Film SET FilmName = N'" + value.FilmName + "', Author = N'" + value.Author + "', Producer=N'" + value.Nation + "',ReleaseDate='" + value.ReleaseDate + "',Description=N'" + value.Description + "',Rated="+value.Rated+ ",Actor=N'"+value.Actor+ "',Status="+value.Status+" WHERE FilmID =" + id;
             try
             {
                 int res = DataProvider.Instace.ExecuteNonQuery(query);
