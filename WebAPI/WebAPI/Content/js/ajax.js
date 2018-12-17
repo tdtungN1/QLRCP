@@ -587,27 +587,12 @@ function CheckBoxGenreFilm(id) {
                 $.each(res, function (i, item) {
                     $("input[name='GenreFilm'][value='" + item.GenreFilmID + "']").prop('checked', true);
                 })
-                
+
             }
         });
     }
 }
 
-function RadioStatusFilm(id) {
-    var html = "";
-    $(".radio-status-film").html("");
-    html+=
-    if (id > 0) {
-        $.ajax({
-            url: "/api/Film_GenreFilm/?FilmID=" + id,
-            type: 'GET',
-            dataType: 'json',
-            success: function (res) {
-                $.each(res, function (i, item) {
-                    $("input[name='GenreFilm'][value='" + item.GenreFilmID + "']").prop('checked', true);
-                })
-
-            }
-        });
-    }
+function RadioStatusFilm(value) {
+    
 }

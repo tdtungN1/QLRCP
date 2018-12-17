@@ -12,7 +12,7 @@ namespace WebAPI.Areas.Admin.Controllers.API
 {
     public class Film_GenreFilmController : ApiController
     {
-        // GET: api/Film_GenreFilm/?FilmID=
+        // GET: api/Film_GenreFilm/?FilmID=5
         public Film_GenreFilm Get(int FilmID, int GenreFilmID)
         {
             Film_GenreFilm film_GenreFilms = new Film_GenreFilm();
