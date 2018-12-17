@@ -13,6 +13,7 @@ namespace WebAPI.Models
         public Room()
         {
             Chairs = new HashSet<Chair>();
+            ShowTimes = new HashSet<ShowTime>();
         }
 
         public int RoomID { get; set; }
@@ -33,5 +34,8 @@ namespace WebAPI.Models
         public virtual ICollection<Chair> Chairs { get; set; }
 
         public virtual Genre_room Genre_room { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ShowTime> ShowTimes { get; set; }
     }
 }

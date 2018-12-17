@@ -190,25 +190,15 @@ function BtnEditRoom_Click() {
                     chairs.push(obj);
                 });
                 console.log(chairs);
-                //Xóa ghế cũ
+                //Sửa lại ghế
                 $.ajax({
-                    type: "DELETE",
+                    type: "PUT",
                     url: "/api/Chair/" + RoomID,
                     data: JSON.stringify(chairs),
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (data) {
-                    }
-                })
-                //Thêm lại ghế
-                $.ajax({
-                    type: "POST",
-                    url: "/api/Chair",
-                    data: JSON.stringify(chairs),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (data) {
-                        alert("Thêm thành công!");
+                        alert("Sửa thành công!");
                         location.href = "/Admin/Rooms/Index";
                     }
                 })
@@ -237,7 +227,59 @@ function BtnEditGenreFilm_Click(id) {
         }
     })
 }
-
+//Sửa Film
+function BtnEditFilm_Click() {
+    var FilmID = $("input[name = 'FilmID']").val();
+    var FilmName = $("input[name = 'FilmName']").val();
+    var Author = $("input[name = 'Author']").val();
+    var Producer = $("input[name = 'Producer']").val();
+    var ReleaseDate = $("input[name = 'ReleaseDate']").val();
+    var Nation = $("input[name = 'Nation']").val();
+    var Rated = $("input[name = 'Rated']").val();
+    var Actor = $("input[name = 'Actor']").val();
+    var Status = 2;
+    $("input[name = 'Status']").each(function () {
+        if ($(this).is(":checked")) {
+            Status = $(this).val();
+        }
+    })
+    var Description = $("textarea[name = 'Description']").val();
+    var film = { FilmName: FilmName, Author: Author, Producer: Producer, ReleaseDate: ReleaseDate, Nation: Nation, Rated: Rated, Actor: Actor, Status: Status, Description: Description }
+    var genreFilm = [];
+    $("input[name = 'GenreFilm']").each(function () {
+        if ($(this).is(":checked")) {
+            var obj = { FilmID: FilmID, GenreFilmID: $(this).val() };
+            genreFilm.push(obj);
+        }
+    })
+    //Sửa phim
+    $.ajax({
+        type: "PUT",
+        url: "/api/Film",
+        data: JSON.stringify(film),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (res) {
+            if (res == 0) {
+                alert("Sửa thất bại");
+            }
+            else {
+                alert("Sửa thành công!");
+                //Thêm loại phim
+                $.ajax({
+                    type: "PUT",
+                    url: "/api/Film_GenreFilm/" + FilmID,
+                    data: JSON.stringify(genreFilm),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (res) {
+                    }
+                });
+                location.href = "/Admin/Films/Index";
+            }
+        }
+    });
+}
 
 //Thêm phòng
 function BtnAddRoom_Click() {
@@ -330,9 +372,12 @@ function BtnAddFilm_Click() {
     var Nation = $("input[name = 'Nation']").val();
     var Rated = $("input[name = 'Rated']").val();
     var Actor = $("input[name = 'Actor']").val();
-    var Status = $("input[name = 'Status']").val();
+    var Status = 2;
     var Description = $("textarea[name = 'Description']").val();
-    var film = { FilmName: FilmName, Author: Author, Producer: Producer, ReleaseDate: ReleaseDate, Nation: Nation, Rated: Rated, Actor: Actor, Status: Status, Description: Description}
+    var film = { FilmName: FilmName, Author: Author, Producer: Producer, ReleaseDate: ReleaseDate, Nation: Nation, Rated: Rated, Actor: Actor, Status: Status, Description: Description }
+    var genreFilm = [];
+
+
     //Thêm mới phòng
     $.ajax({
         type: "POST",
@@ -346,10 +391,34 @@ function BtnAddFilm_Click() {
             }
             else {
                 alert("Thêm thành công!");
+                $("input[name = 'GenreFilm']").each(function () {
+                    if ($(this).is(":checked")) {
+                        var obj = { FilmID: res, GenreFilmID: $(this).val() };
+                        genreFilm.push(obj);
+                    }
+                })
+                //Thêm loại phòng
+                $.ajax({
+                    type: "POST",
+                    url: "/api/Film_GenreFilm",
+                    data: JSON.stringify(genreFilm),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (res) {
+                        if (res == 0) {
+                            alert("Thêm thất bại");
+                        }
+                        else {
+                            alert("Thêm loai thành công!");
+                        }
+                    }
+                });
                 location.href = "/Admin/Films/Index";
             }
         }
-    })
+    });
+
+
 }
 
 
@@ -397,6 +466,13 @@ function DelGenreFilmClick(id) {
 function DelFilmClick(id) {
     var ok = confirm("Bạn có chắc muốn xóa!");
     if (ok == true) {
+        $.ajax({
+            url: "/api/Film_GenreFilm/" + id,
+            type: 'DELETE',
+            dataType: 'json',
+            success: function (res) {
+            }
+        });
         $.ajax({
             url: "/api/Film/" + id,
             type: 'DELETE',
@@ -473,7 +549,7 @@ function LoadDataFilm() {
                 _table += "<td>" + item.Producer + "</td>";
                 _table += "<td>" + formatdate(item.ReleaseDate) + "</td>";
                 _table += "<td>" + item.Nation + "</td>";
-                _table += "<td>" + item.Rated + "</td>";
+                _table += "<td>" + item.Rated.toFixed(1) + "</td>";
                 _table += "<td>" + item.Actor + "</td>";
                 _table += "<td>" + GetStatusFilm(item.Status) + "</td>";
                 _table = _table + "<td>";
@@ -485,4 +561,53 @@ function LoadDataFilm() {
     });
 };
 
+function CheckBoxGenreFilm(id) {
+    var html = "";
+    $(".check-box-genre-film").html("");
+    $.ajax({
+        url: "/api/Genre_film",
+        type: 'GET',
+        dataType: 'json',
+        success: function (res) {
+            html += "<div><label for=''>Loại phim</label></div>";
+            $.each(res, function (i, item) {
+                html += "<div class='col-md-4 col-sm-6 col-xs-12'><div class='row'>";
+                html += "<input type = 'checkbox' name = 'GenreFilm' id = 'genreFilm" + item.GenreFilmID + "' value='" + item.GenreFilmID + "' /> <label for='genreFilm" + item.GenreFilmID + "'>" + item.GenreFilmName + "</label>";
+                html += "</div></div>";
+            });
+            $(".check-box-genre-film").html(html);
+        }
+    });
+    if (id > 0) {
+        $.ajax({
+            url: "/api/Film_GenreFilm/?FilmID=" + id,
+            type: 'GET',
+            dataType: 'json',
+            success: function (res) {
+                $.each(res, function (i, item) {
+                    $("input[name='GenreFilm'][value='" + item.GenreFilmID + "']").prop('checked', true);
+                })
+                
+            }
+        });
+    }
+}
 
+function RadioStatusFilm(id) {
+    var html = "";
+    $(".radio-status-film").html("");
+    html+=
+    if (id > 0) {
+        $.ajax({
+            url: "/api/Film_GenreFilm/?FilmID=" + id,
+            type: 'GET',
+            dataType: 'json',
+            success: function (res) {
+                $.each(res, function (i, item) {
+                    $("input[name='GenreFilm'][value='" + item.GenreFilmID + "']").prop('checked', true);
+                })
+
+            }
+        });
+    }
+}

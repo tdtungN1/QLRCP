@@ -229,6 +229,7 @@
     <Compile Include="Models\Genre_room.cs" />
     <Compile Include="Models\QLRCP.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\ShowTime.cs" />
     <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\User.cs" />
@@ -301,8 +302,6 @@
     <Content Include="Areas\Admin\Views\Genre_room\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Genre_room\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Films\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Films\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Films\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Films\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Films\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Genre_film\Create.cshtml" />

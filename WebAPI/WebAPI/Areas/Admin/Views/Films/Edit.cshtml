@@ -4,91 +4,81 @@
     ViewBag.Title = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Edit</h2>
+@section boxTitle {
+    <div class="col-md-12">
+        @Html.ActionLink("Trở về", "Index")
+    </div>
+}
+<h2>Sửa phim</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-<h1> @ViewBag.id</h1>
     <div class="form-horizontal">
-        <h4>Film</h4>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.FilmID)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.FilmName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FilmName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FilmName, "", new { @class = "text-danger" })
+        <input type="hidden" value="@Model.FilmID" name="FilmID"/>
+        <div class="container">
+            <div class="form-group">
+                <label for="">Tên phim</label>
+                <input type="text" class="form-control" name="FilmName" id="" placeholder="Tên phim" value="@Model.FilmName">
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label for="">Đạo diễn</label>
+                <input type="text" class="form-control" name="Author" id="" placeholder="Đạo diễn" value="@Model.Author">
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Producer, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Producer, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Producer, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label for="">Nhà sản xuất</label>
+                <input type="text" class="form-control" name="Producer" id="" placeholder="Nhà sản xuất" value="@Model.Producer">
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ReleaseDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ReleaseDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ReleaseDate, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label for="">Quốc gia</label>
+                <input type="text" class="form-control" name="Nation" id="" value="@Model.Nation" />
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nation, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nation, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nation, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label for="">Ngày khởi chiếu</label>
+                @{
+                    var date = String.Format("{0:yyyy-MM-dd}", Model.ReleaseDate);
+                }
+                <input type="date" class="form-control" name="ReleaseDate" id="" value="@date" />
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label for="">Đánh giá</label>
+                <input type="text" class="form-control" name="Rated" id="" placeholder="5.0" value="@Model.Rated" />
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Rated, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Rated, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Rated, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label for="">Chi tiết</label>
+                <textarea name="Description" rows="5" class="form-control">@Model.Description</textarea>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Actor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Actor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Actor, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div>Trạng thái</div>
+
+                <input type="radio" class="cr-pointer" name="Status" id="st-0" value="0" /><label for="st-0" class="cr-pointer">Sắp chiếu</label>
+                <input type="radio" class="cr-pointer" name="Status" id="st-1" value="1" /><label for="st-1" class="cr-pointer">Đang chiếu</label>
+                <input type="radio" class="cr-pointer" name="Status" id="st-2" value="2" /><label for="st-2" class="cr-pointer">Ngừng chiếu</label>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div class="form-group check-box-genre-film">
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    CheckBoxGenreFilm(@Model.FilmID);
+                })
+            </script>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-primary">Sửa</button>
             </div>
         </div>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
+
+
+}

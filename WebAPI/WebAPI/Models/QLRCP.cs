@@ -20,6 +20,7 @@ namespace WebAPI.Models
         public virtual DbSet<Genre_film> Genre_film { get; set; }
         public virtual DbSet<Genre_room> Genre_room { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
+        public virtual DbSet<ShowTime> ShowTimes { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
         public virtual DbSet<User> Users { get; set; }
@@ -33,6 +34,21 @@ namespace WebAPI.Models
             modelBuilder.Entity<Film>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Film>()
+                .HasMany(e => e.ShowTimes)
+                .WithRequired(e => e.Film)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Room>()
+                .HasMany(e => e.ShowTimes)
+                .WithRequired(e => e.Room)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ShowTime>()
+                .HasMany(e => e.Tickets)
+                .WithRequired(e => e.ShowTime)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<User>()
                 .Property(e => e.username)

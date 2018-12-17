@@ -21,11 +21,6 @@ namespace WebAPI.Models
         [StringLength(30)]
         public string GenreRoomName { get; set; }
 
-        public Genre_room(int genreRoomID, string genreRoomName)
-        {
-            GenreRoomID = genreRoomID;
-            GenreRoomName = genreRoomName;
-        }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Room> Rooms { get; set; }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -30,13 +31,17 @@ namespace WebAPI.Areas.Admin.Controllers.API
         public IEnumerable<Film_GenreFilm> GetByFilm(int FilmID)
         {
             List<Film_GenreFilm> film_GenreFilms = new List<Film_GenreFilm>();
-            string query = "SELECT * FROM dbo.Film_GenreFilm WHERE FilmID = " + FilmID;
+            string query = "SELECT f.*,g.GenreFilmName FROM dbo.Film_GenreFilm f JOIN Genre_film g ON f.GenreFilmID = g.GenreFilmID WHERE f.FilmID = " + FilmID;
             DataTable table = DataProvider.Instace.ExecuteQuery(query);
             foreach (DataRow row in table.Rows)
             {
                 Film_GenreFilm item = new Film_GenreFilm();
                 item.GenreFilmID = int.Parse(row["GenreFilmID"].ToString());
                 item.FilmID = int.Parse(row["FilmID"].ToString());
+                Genre_film genre_Film = new Genre_film();
+                genre_Film.GenreFilmName = row["GenreFilmName"].ToString();
+                genre_Film.GenreFilmID = int.Parse(row["GenreFilmID"].ToString());
+                item.Genre_film = genre_Film;
                 film_GenreFilms.Add(item);
             }
             return film_GenreFilms;
@@ -46,13 +51,17 @@ namespace WebAPI.Areas.Admin.Controllers.API
         public IEnumerable<Film_GenreFilm> GetByGenreFilm(int GenreFilmID)
         {
             List<Film_GenreFilm> film_GenreFilms = new List<Film_GenreFilm>();
-            string query = "SELECT * FROM dbo.Film_GenreFilm WHERE GenreFilmID = " + GenreFilmID;
+            string query = "SELECT f.*,g.GenreFilmName FROM dbo.Film_GenreFilm f JOIN Genre_film g ON f.GenreFilmID = g.GenreFilmID WHERE f.GenreFilmID = " + GenreFilmID;
             DataTable table = DataProvider.Instace.ExecuteQuery(query);
             foreach (DataRow row in table.Rows)
             {
                 Film_GenreFilm item = new Film_GenreFilm();
                 item.GenreFilmID = int.Parse(row["GenreFilmID"].ToString());
                 item.FilmID = int.Parse(row["FilmID"].ToString());
+                Genre_film genre_Film = new Genre_film();
+                genre_Film.GenreFilmName = row["GenreFilmName"].ToString();
+                genre_Film.GenreFilmID = int.Parse(row["GenreFilmID"].ToString());
+                item.Genre_film = genre_Film;
                 film_GenreFilms.Add(item);
             }
             return film_GenreFilms;
@@ -69,13 +78,25 @@ namespace WebAPI.Areas.Admin.Controllers.API
         }
 
         // PUT: api/Film_GenreFilm/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]List<Film_GenreFilm> value)
         {
+            Delete(id);
+            Post(value);
         }
 
         // DELETE: api/Film_GenreFilm/5
-        public void Delete(int id)
+        public int Delete(int id)
         {
+            string query = "DELETE  dbo.Film_GenreFilm WHERE FilmID = " + id;
+            try
+            {
+                int res = DataProvider.Instace.ExecuteNonQuery(query);
+            }
+            catch (SqlException ex)
+            {
+                return 0;
+            }
+            return 1;
         }
     }
 }

@@ -1,8 +1,13 @@
 ﻿.d-flex {
     display: flex;
 }
-
-
+.cr-pointer {
+    cursor: pointer
+}
+input[type='radio']{
+    margin-left:15px;
+    margin-right:5px;
+}
 .i-number-room {
     width: 70px !important;
 }

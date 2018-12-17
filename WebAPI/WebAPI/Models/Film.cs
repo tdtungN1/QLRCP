@@ -1,4 +1,4 @@
-namespace WebAPI.Models
+﻿namespace WebAPI.Models
 {
     using System;
     using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace WebAPI.Models
         public Film()
         {
             Film_GenreFilm = new HashSet<Film_GenreFilm>();
-            Tickets = new HashSet<Ticket>();
+            ShowTimes = new HashSet<ShowTime>();
         }
 
         public int FilmID { get; set; }
@@ -42,12 +42,17 @@ namespace WebAPI.Models
         [StringLength(200)]
         public string Actor { get; set; }
 
+        /// <summary>
+        /// 0:Sắp chiếu.
+        /// 1:Đang chiếu.
+        /// 2:NGừng chiếu
+        /// </summary>
         public byte? Status { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Film_GenreFilm> Film_GenreFilm { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ticket> Tickets { get; set; }
+        public virtual ICollection<ShowTime> ShowTimes { get; set; }
     }
 }

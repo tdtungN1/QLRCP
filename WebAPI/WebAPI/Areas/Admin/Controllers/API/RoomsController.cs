@@ -48,7 +48,9 @@ namespace WebAPI.Areas.Admin.Controllers
             room.StatusRoom = byte.Parse(table.Rows[0]["StatusRoom"].ToString());
             room.GenreRoomID = int.Parse(table.Rows[0]["GenreRoomID"].ToString());
             room.RoomID = int.Parse(table.Rows[0]["RoomID"].ToString());
-            Genre_room genre_Room = new Genre_room(room.GenreRoomID, table.Rows[0]["GenreRoomName"].ToString());
+            Genre_room genre_Room = new Genre_room();
+            genre_Room.GenreRoomID = room.GenreRoomID;
+            genre_Room.GenreRoomName = table.Rows[0]["GenreRoomName"].ToString();
             room.Genre_room = genre_Room;
             return room;
         }

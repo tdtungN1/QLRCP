@@ -11,11 +11,9 @@ namespace WebAPI.Models
     {
         public int TicketID { get; set; }
 
+        public int ShowTimeID { get; set; }
+
         public int? ChairID { get; set; }
-
-        public int? FilmID { get; set; }
-
-        public DateTime? StartTime { get; set; }
 
         public long Price { get; set; }
 
@@ -23,7 +21,7 @@ namespace WebAPI.Models
 
         public virtual Chair Chair { get; set; }
 
-        public virtual Film Film { get; set; }
+        public virtual ShowTime ShowTime { get; set; }
 
         public virtual User User { get; set; }
     }

@@ -55,8 +55,10 @@ namespace WebAPI.Areas.Admin.Controllers.API
         }
 
         // PUT: api/Chair/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]List<Chair> value)
         {
+            Delete(id);
+            Post(value);
         }
 
         // DELETE: api/Chair/5
@@ -67,7 +69,7 @@ namespace WebAPI.Areas.Admin.Controllers.API
             {
                 int res = DataProvider.Instace.ExecuteNonQuery(query);
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
                 return 0;
             }
