@@ -7,7 +7,7 @@ a{
 a:hover{
 	text-decoration: none;
 	color: #f26c39;
-	transition: all ease-in-out 0.2s;  
+	transition: all ease-in-out 0.2s;
 }
 .c-green{
 	color: #7dc71d;
@@ -50,7 +50,7 @@ a:hover{
 	margin-right: 50px;
 }
 .logo:hover{
-	color: #47251c!important;	
+	color: #47251c!important;
 }
 .img-logo{
 	height: 100%;
@@ -189,7 +189,7 @@ a:hover{
 	height: 100%;
 	background: rgba(51, 51, 51, .5);
 	top: 0;
-	transition: all ease-in-out 0.2s;  
+	transition: all ease-in-out 0.2s;
 }
 /*Nút mua vé*/
 .btn-sale,.btn-info{
@@ -201,7 +201,7 @@ a:hover{
 	top: calc(50% - 25px);
 	left: calc(50% - 65px);
 	opacity: 0;
-	transition: all ease-in-out 0.2s;   
+	transition: all ease-in-out 0.2s;
   	line-height: 50px;
   	text-align: center;
   	border: 1px solid #fff;
@@ -219,7 +219,7 @@ a:hover{
 .thumbnail:hover .thumbnail-content,
 .thumbnail:hover .btn-info{
 	opacity: 1;
-	transition: all ease-in-out 0.2s; 
+	transition: all ease-in-out 0.2s;
   	-webket-transform: rotate3d(30deg, 50deg, 180deg, angle);
 }
 .btn-sale:hover,
@@ -252,7 +252,7 @@ a:hover{
 	background: #f26c39;
 	color: #fff;
 	text-decoration: none;
-	transition: all ease-in-out 0.2s; 
+	transition: all ease-in-out 0.2s;
 }
 
 /*Bình luận phim*/
@@ -355,7 +355,7 @@ a:hover{
 /*news*/
 
 .promotion{
-	
+
 	margin: 15px 0;
 }
 .banner-promotion{
@@ -373,7 +373,7 @@ a:hover{
 	left: 0;
 	background: rgba(51, 51, 51, 0.85);
 	opacity: 0;
-	transition: all ease-in-out 0.2s;  
+	transition: all ease-in-out 0.2s;
 }
 .content-promotion h2,.content-promotion p{
 	margin: 20px;
@@ -381,7 +381,7 @@ a:hover{
     display: block;
     display: -webkit-box;
     max-width: 100%;
-    
+
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -524,7 +524,7 @@ a:hover{
 .tabs-login-res>li{
 	width: 50%;
     text-align: center;
-    font-size: 18px;	
+    font-size: 18px;
 }
 .tabs-login-res>li.active>a{
 	background: #337ab7!important;
@@ -718,4 +718,44 @@ a:hover{
 #giochieu-movie {
 	background-color: #337ab7;
 	padding: 5px 17px 5px 17px;
+}
+
+.img-user {
+  border: 1px solid red;
+  width: 200px;
+  height: 200px;
+}
+
+.img-info-user {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.information-user {
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+.form-control {
+  margin-bottom: 20px;
+  margin-top: -5px;
+}
+
+.btn-primary {
+  margin-top: 30px;
+}
+
+.img-film-new {
+  width: 400px;
+  height: 300px;
+}
+
+.img-film-new-show {
+  width: 100%;
+  height: 400px;
+}
+
+.img-film-fare {
+  width: 100%;
+  height: 100%;
 }

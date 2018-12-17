@@ -1,91 +1,71 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Demo Cinema</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
-	<link rel="stylesheet" href="css/style.css"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo Cinema</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-	<header class="header">
-		<nav class="navbar navbar-default" role="navigation">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand logo" href="index.html">
-						<img src="img/demo2.png" class="img-logo"> Cinema
-					</a>
-				</div>
-		
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse navbar-ex1-collapse">
-					<form class="navbar-form navbar-left form-inline form-seach" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control txt-seach" placeholder="Search" name="key">
-							<button type="submit" class="btn icon-seach"><span class="glyphicon glyphicon-search"></span></button>
-						</div>
-					</form>
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a class="login" data-toggle="modal" href='#modal-id'>Đăng nhập</a>
-							<div class="modal fade" id="modal-id">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											<h4 class="modal-title">Modal title</h4>
-										</div>
-										<div class="modal-body">
-											<p>âsđâsda</p>
-											<p>âsđâsda</p>
-											<p>âsđâsda</p>
-											<p>âsđâsda</p>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-											<button type="button" class="btn btn-primary">Save changes</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-						<!-- Đã đăng nhập -->
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle login" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> Xin chào Mặt Than<b class="caret"></b></a>
-							<ul class="dropdown-menu dropdown-menu-user">
-								<li><a href="#"><span class="glyphicon glyphicon-info-sign"> </span> Thông tin tài khoản</a></li>
-								<li><a href="#"><span class="glyphicon glyphicon-ok"></span> Lịch sử mua hàng</a></li>
-								<li><a href="#"><span class="glyphicon glyphicon-heart"></span> Yêu thích</a></li>
-								<li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="navbar-inverse">
-				<div class="container">
-					<div class="collapse navbar-collapse navbar-ex1-collapse">
-						<ul class="nav navbar-nav navbar-left nav-menu">
-							<li class="row-menu col-md-2 col-sm-2"><a href="#">Lịch chiếu</a></li>
-							<li class="row-menu col-md-2 col-sm-2"><a href="movie.html">Phim</a></li>
-							<li class="row-menu col-md-2 col-sm-2"><a href="#">Rạp</a></li>
-							<li class="row-menu col-md-2 col-sm-2"><a href="#">Giá vé</a></li>
-							<li class="row-menu col-md-2 col-sm-2"><a href="#">Tin mới và ưu đãi</a></li>
-							<li class="row-menu col-md-2 col-sm-2"><a href="#">Thành viên</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</nav>
-	</header>
+  <header class="header">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand logo" href="index.html">
+            <img src="img/demo2.png" class="img-logo"> Cinema
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <form class="navbar-form navbar-left form-inline form-seach" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control txt-seach" placeholder="Search" name="key">
+              <a href="search.html" class="btn icon-seach"><span class="glyphicon glyphicon-search"></span></a>
+            </div>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a class="login" href="login.html">Đăng nhập</a>
+            </li>
+            <!-- Đã đăng nhập -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle login" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> Xin chào Mặt Than<b class="caret"></b></a>
+              <ul class="dropdown-menu dropdown-menu-user">
+                <li><a href="user.html"><span class="glyphicon glyphicon-info-sign"> </span> Thông tin tài khoản</a></li>
+                <li><a href="user.html"><span class="glyphicon glyphicon-ok"></span> Thẻ thành viên</a></li>
+                <li><a href="user.html"><span class="glyphicon glyphicon-heart"></span> Hành trình điện ảnh</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="navbar-inverse">
+        <div class="container">
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-left nav-menu">
+              <li class="row-menu col-md-2 col-sm-2"><a href="showtimes.html">Lịch chiếu</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="movie.html">Phim</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="cinema.html">Rạp</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="fare.html">Giá vé</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="new.html">Tin mới và ưu đãi</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="user.html">Thành viên</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
 	<main class="main">
 		<div id="carousel-id" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
@@ -116,7 +96,7 @@
 				<ul class="nav nav-tabs">
 					<li class="active">
 						<a class="tab-a">TÌM KIẾM NHANH</a>
-					</li>	
+					</li>
 				</ul>
 			</div>
 			<div class="row search-form">
@@ -139,7 +119,6 @@
 			      </select>
 			    </div>
 		    </div>
-
 		</div>
 
 		<div class="container">
@@ -168,7 +147,7 @@
 									</div>
 									<div class="col-md-3 description-movie">
 										<div class="row">
-											<a href="" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
+											<a href="show-film-buy.html" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
 										</div>
 										<div class="row" id="infomation-movie-home">
 											<a><span class="glyphicon glyphicon-tags"></span> Hành động, Hồi Hộp</a>
@@ -177,7 +156,7 @@
 										<div class="row lichchieu-movie">
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
 												<a id="giochieu-movie" data-toggle="modal" href="#modal-1">08:10</a>
-												
+
 												<div class="ghe-movie">128 ghế trống</div>
 											</div>
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
@@ -199,7 +178,7 @@
 									</div>
 									<div class="col-md-3 description-movie">
 										<div class="row">
-											<a href="" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
+											<a href="show-film-buy.html" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
 										</div>
 										<div class="row" id="infomation-movie-home">
 											<a><span class="glyphicon glyphicon-tags"></span> Hành động, Hồi Hộp</a>
@@ -208,7 +187,7 @@
 										<div class="row lichchieu-movie">
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
 												<a id="giochieu-movie" data-toggle="modal" href="#modal-1">08:10</a>
-												
+
 												<div class="ghe-movie">128 ghế trống</div>
 											</div>
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
@@ -232,7 +211,7 @@
 									</div>
 									<div class="col-md-3 description-movie">
 										<div class="row">
-											<a href="" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
+											<a href="show-film-buy.html" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
 										</div>
 										<div class="row" id="infomation-movie-home">
 											<a><span class="glyphicon glyphicon-tags"></span> Hành động, Hồi Hộp</a>
@@ -241,7 +220,7 @@
 										<div class="row lichchieu-movie">
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
 												<a id="giochieu-movie" data-toggle="modal" href="#modal-1">08:10</a>
-												
+
 												<div class="ghe-movie">128 ghế trống</div>
 											</div>
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
@@ -263,7 +242,7 @@
 									</div>
 									<div class="col-md-3 description-movie">
 										<div class="row">
-											<a href="" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
+											<a href="show-film-buy.html" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
 										</div>
 										<div class="row" id="infomation-movie-home">
 											<a><span class="glyphicon glyphicon-tags"></span> Hành động, Hồi Hộp</a>
@@ -272,7 +251,7 @@
 										<div class="row lichchieu-movie">
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
 												<a id="giochieu-movie" data-toggle="modal" href="#modal-1">08:10</a>
-												
+
 												<div class="ghe-movie">128 ghế trống</div>
 											</div>
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
@@ -288,7 +267,6 @@
 								</div>
 							</div>
 						</div>
-						
 					</div>
 					<div role="tabpanel" class="tab-pane row" id="2">
 						<div class="row">
@@ -299,7 +277,7 @@
 									</div>
 									<div class="col-md-3 description-movie">
 										<div class="row">
-											<a href="" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
+											<a href="show-film-buy.html" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
 										</div>
 										<div class="row" id="infomation-movie-home">
 											<a><span class="glyphicon glyphicon-tags"></span> Hành động, Hồi Hộp</a>
@@ -308,7 +286,7 @@
 										<div class="row lichchieu-movie">
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
 												<a id="giochieu-movie" data-toggle="modal" href="#modal-1">08:10</a>
-												
+
 												<div class="ghe-movie">128 ghế trống</div>
 											</div>
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
@@ -330,7 +308,7 @@
 									</div>
 									<div class="col-md-3 description-movie">
 										<div class="row">
-											<a href="" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
+											<a href="show-film-buy.html" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
 										</div>
 										<div class="row" id="infomation-movie-home">
 											<a><span class="glyphicon glyphicon-tags"></span> Hành động, Hồi Hộp</a>
@@ -339,7 +317,7 @@
 										<div class="row lichchieu-movie">
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
 												<a id="giochieu-movie" data-toggle="modal" href="#modal-1">08:10</a>
-												
+
 												<div class="ghe-movie">128 ghế trống</div>
 											</div>
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
@@ -365,7 +343,7 @@
 									</div>
 									<div class="col-md-3 description-movie">
 										<div class="row">
-											<a href="" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
+											<a href="show-film-buy.html" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
 										</div>
 										<div class="row" id="infomation-movie-home">
 											<a><span class="glyphicon glyphicon-tags"></span> Hành động, Hồi Hộp</a>
@@ -374,7 +352,7 @@
 										<div class="row lichchieu-movie">
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
 												<a id="giochieu-movie" data-toggle="modal" href="#modal-1">08:10</a>
-												
+
 												<div class="ghe-movie">128 ghế trống</div>
 											</div>
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
@@ -396,7 +374,7 @@
 									</div>
 									<div class="col-md-3 description-movie">
 										<div class="row">
-											<a href="" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
+											<a href="show-film-buy.html" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
 										</div>
 										<div class="row" id="infomation-movie-home">
 											<a><span class="glyphicon glyphicon-tags"></span> Hành động, Hồi Hộp</a>
@@ -405,7 +383,7 @@
 										<div class="row lichchieu-movie">
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
 												<a id="giochieu-movie" data-toggle="modal" href="#modal-1">08:10</a>
-												
+
 												<div class="ghe-movie">128 ghế trống</div>
 											</div>
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
@@ -431,7 +409,7 @@
 									</div>
 									<div class="col-md-3 description-movie">
 										<div class="row">
-											<a href="" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
+											<a href="show-film-buy.html" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
 										</div>
 										<div class="row" id="infomation-movie-home">
 											<a><span class="glyphicon glyphicon-tags"></span> Hành động, Hồi Hộp</a>
@@ -440,7 +418,7 @@
 										<div class="row lichchieu-movie">
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
 												<a id="giochieu-movie" data-toggle="modal" href="#modal-1">08:10</a>
-												
+
 												<div class="ghe-movie">128 ghế trống</div>
 											</div>
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
@@ -462,7 +440,7 @@
 									</div>
 									<div class="col-md-3 description-movie">
 										<div class="row">
-											<a href="" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
+											<a href="show-film-buy.html" class="name-movie">Con đường tơ lụa (2D Phụ đề)</a></br>
 										</div>
 										<div class="row" id="infomation-movie-home">
 											<a><span class="glyphicon glyphicon-tags"></span> Hành động, Hồi Hộp</a>
@@ -471,7 +449,7 @@
 										<div class="row lichchieu-movie">
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
 												<a id="giochieu-movie" data-toggle="modal" href="#modal-1">08:10</a>
-												
+
 												<div class="ghe-movie">128 ghế trống</div>
 											</div>
 											<div class="col-lg-2 col-md-5 col-sm-5 col-xs-7 margin-xs-bottom-10 text-center time-movie">
@@ -515,7 +493,7 @@
 									</table>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-primary">Đồng ý</button>
+									<a class="btn btn-primary" href="select-chair.html">Đồng ý</a>
 								</div>
 							</div>
 						</div>
@@ -524,8 +502,7 @@
 			</div>
 		</div>
 	</main>
-
-	<footer class="footer">	
+	<footer class="footer">
 		<div class="container">
 			<!-- Start col -->
 			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo Cinema</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand logo" href="index.html">
+            <img src="img/demo2.png" class="img-logo"> Cinema
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <form class="navbar-form navbar-left form-inline form-seach" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control txt-seach" placeholder="Search" name="key">
+              <a href="search.html" class="btn icon-seach"><span class="glyphicon glyphicon-search"></span></a>
+            </div>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a class="login" href="login.html">Đăng nhập</a>
+            </li>
+            <!-- Đã đăng nhập -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle login" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> Xin chào Mặt Than<b class="caret"></b></a>
+              <ul class="dropdown-menu dropdown-menu-user">
+                <li><a href="user.html"><span class="glyphicon glyphicon-info-sign"> </span> Thông tin tài khoản</a></li>
+                <li><a href="user.html"><span class="glyphicon glyphicon-ok"></span> Thẻ thành viên</a></li>
+                <li><a href="user.html"><span class="glyphicon glyphicon-heart"></span> Hành trình điện ảnh</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="navbar-inverse">
+        <div class="container">
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-left nav-menu">
+              <li class="row-menu col-md-2 col-sm-2"><a href="showtimes.html">Lịch chiếu</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="movie.html">Phim</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="cinema.html">Rạp</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="fare.html">Giá vé</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="new.html">Tin mới và ưu đãi</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="user.html">Thành viên</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="container">
+      <div role="tabpanel" class="tab-film">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a href="#tttk" aria-controls="home" role="tab" data-toggle="tab" class="tab-a">THÔNG TIN TÀI KHOẢN</a>
+          </li>
+          <li role="presentation">
+            <a href="#ttv" aria-controls="home" role="tab" data-toggle="tab" class="tab-a">THẺ THÀNH VIÊN</a>
+          </li>
+          <li role="presentation">
+            <a href="#htda" aria-controls="home" role="tab" data-toggle="tab" class="tab-a">HÀNH TRÌNH ĐIỆN ẢNH</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active row" id="tttk">
+            <div class="row img-info-user">
+              <div class="col-md-4">
+                <img src="img/user.jpg" alt="" class="img-user">
+                <button>ẢNH TẢI LÊN</button>
+              </div>
+            </div>
+            <div class="row information-user">
+              <div class="row">
+                <div class="col-md-6">
+                  <p>* Họ tên</p>
+                  <input type="text" class="form-control" placeholder="Mặt Than">
+                </div>
+                <div class="col-md-6">
+                  <p>* Email</p>
+                  <input type="text" class="form-control" placeholder="matthan@gmail.com">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <p>* Số điện thoại</p>
+                  <input type="text" class="form-control" placeholder="012345678">
+                </div>
+                <div class="col-md-6">
+                  <p>* CMND/Hộ chiếu</p>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <p>* Ngày sinh</p>
+                  <input type="date" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <p>Giới tính</p>
+                  <select class="form-control">
+                    <option>Nam</option>
+                    <option>Nữ</option>
+                    <option>Khác</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <p>Tỉnh/Thành phố</p>
+                  <select class="form-control">
+                    <option>Tỉnh/Thành phố</option>
+                    <option>TỈnh Sơn La</option>
+                    <option>TỈnh Cà Mau</option>
+                    <option>TỈnh Trà Vinh</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <p>Quận/Huyện</p>
+                  <select class="form-control">
+                    <option>Quận/Huyện</option>
+                    <option>Huyện Mộc Châu</option>
+                    <option>Huyện Mai Sơn</option>
+                    <option>Huyện Mường La</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p>Địa chỉ</p>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <a href="">Đổi mật khẩu?</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <input type="button" value="CẬP NHẬT" class="btn-primary form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane row" id="ttv">
+            <div class="row img-info-user">
+              <div class="col-md-12">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>SỐ THẺ</th>
+                      <th>HẠNG THẺ</th>
+                      <th>NGÀY KÍCH HOẠT</th>
+                      <th>TỔNG CHI TIÊU</th>
+                      <th>ĐIỂM TÍCH LŨY</th>
+                      <th>ĐIỂM ĐÃ TIÊU</th>
+                      <th>ĐIỂM KHẢ DỤNG</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>9001000000048817 (Đang dùng)</td>
+                      <td>Khách hàng thân thiết</td>
+                      <td>27/04/2018</td>
+                      <td>1.090.000 đ</td>
+                      <td>18800</td>
+                      <td>0</td>
+                      <td>18800</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane row" id="htda">
+            <div class="row img-info-user">
+              <div class="col-md-12">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>MÃ HÓA ĐƠN</th>
+                      <th>PHIM</th>
+                      <th>RẠP CHIẾU</th>
+                      <th>SUẤT CHIẾU</th>
+                      <th>GHẾ ĐÃ ĐẶT</th>
+                      <th>COMBO/PACKAGE</th>
+                      <th>NGÀY ĐẶT</th>
+                      <th>ĐIỂM</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>7123186315011161</td>
+                      <td>Venom</td>
+                      <td>Cinema P1</td>
+                      <td>16/10/2018 14:10</td>
+                      <td>
+                        <p>Adult Vip 2D</p>
+                        <p>J9, J10</p>
+                        <p>Tổng tiền: 90.000 đ</p>
+                      </td>
+                      <td></td>
+                      <td>16/10/2018 13:56</td>
+                      <td>
+                        <p>+ 900 Điểm tích lũy</p>
+                        <p>- 0 Điểm tiêu dùng</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2507168501540808</td>
+                      <td>Nhiệm Vụ Bất Khả Thi: Sụp Đổ</td>
+                      <td>Cinema P2</td>
+                      <td>04/08/2018 17:15</td>
+                      <td>
+                        <p>Adult Dou 2D</p>
+                        <p>M3</p>
+                        <p>Tổng tiền: 70.000 đ </p>
+                        <hr>
+                        <p>Adult Dou 2D</p>
+                        <p>M3</p>
+                        <p>Tổng tiền: 70.000 đ </p>
+                      </td>
+                      <td>
+                        <p>Beta Pack 62oz Stu</p>
+                        <p>45</p>
+                        <p>Số lượng: 1</p>
+                        <p>Tổng tiền: 110.000 đ</p>
+                        <hr>
+                        <p>Beta Pack 62oz 70</p>
+                        <p>Số lượng: 1</p>
+                        <p>Tổng tiền: 135.000 đ</p>
+                      </td>
+                      <td>04/08/2018 16:55</td>
+                      <td>
+                        <p>+ 5050 Điểm tích lũy</p>
+                        <p>- 0 Điểm tiêu dùng</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <!-- Start col -->
+      <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+        <h1>Demo Cinema</h1>
+        <ul>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Giới Thiệu</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Tiện Ích</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Quà Tặng</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Tuyển Dụng</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Liên Hệ Quảng Cáo</a>
+          </li>
+        </ul>
+      </div>
+      <!-- End col -->
+      <!-- Start col -->
+      <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+        <h1>Điều khoản sử dụng</h1>
+        <ul>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Điều Khoản Chung</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Điều Khoản Giao Dịch</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Chính Sách Thanh Toán</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Chính Sách Bảo Mật</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Câu Hỏi Thường Gặp</a>
+          </li>
+        </ul>
+      </div>
+      <!-- End col -->
+      <!-- Start col -->
+      <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+        <h1>Hỗ trợ</h1>
+        <ul>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Hotline: 1900 0000</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Giờ Làm Việc: 8:00 - 22:00</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Giá Vé</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Khuyến Mãi</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Góp Ý</a>
+          </li>
+        </ul>
+      </div>
+      <!-- End col -->
+      <!-- Start col -->
+      <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+        <h1>Kết nối với chúng tôi</h1>
+        <ul class="connect">
+          <li>
+            <a href="" class="follow-fb"></a>
+          </li>
+          <li>
+            <a href="" class="follow-yt"></a>
+          </li>
+          <li>
+            <a href="" class="follow-ln"></a>
+          </li>
+          <li>
+            <a href="" class="follow-it"></a>
+          </li>
+          <li>
+            <a href="" class="follow-zl"></a>
+          </li>
+        </ul>
+      </div>
+      <!-- End col -->
+    </div>
+  </footer>
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

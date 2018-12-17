@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo Cinema</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand logo" href="index.html">
+            <img src="img/demo2.png" class="img-logo"> Cinema
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <form class="navbar-form navbar-left form-inline form-seach" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control txt-seach" placeholder="Search" name="key">
+              <a href="search.html" class="btn icon-seach"><span class="glyphicon glyphicon-search"></span></a>
+            </div>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a class="login" href="login.html">Đăng nhập</a>
+            </li>
+            <!-- Đã đăng nhập -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle login" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> Xin chào Mặt Than<b class="caret"></b></a>
+              <ul class="dropdown-menu dropdown-menu-user">
+                <li><a href="user.html"><span class="glyphicon glyphicon-info-sign"> </span> Thông tin tài khoản</a></li>
+                <li><a href="user.html"><span class="glyphicon glyphicon-ok"></span> Thẻ thành viên</a></li>
+                <li><a href="user.html"><span class="glyphicon glyphicon-heart"></span> Hành trình điện ảnh</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="navbar-inverse">
+        <div class="container">
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-left nav-menu">
+              <li class="row-menu col-md-2 col-sm-2"><a href="showtimes.html">Lịch chiếu</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="movie.html">Phim</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="cinema.html">Rạp</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="fare.html">Giá vé</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="new.html">Tin mới và ưu đãi</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="user.html">Thành viên</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="container">
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+        <div class="box-select-chair">
+          <div class="box-title">
+            <div>Chọn ghế:</div>
+          </div>
+          <div class="box-content">
+            <div class="d-flex row-chair">
+              <div class="row-name">D</div>
+              <div class="col-name couple-chair">1</div>
+              <div class="col-name couple-chair">2</div>
+              <div class="col-name couple-chair erro-chair">3</div>
+              <div class="col-name couple-chair erro-chair">4</div>
+              <div class="col-name couple-chair">5</div>
+              <div class="col-name couple-chair">6</div>
+              <div class="col-name couple-chair">7</div>
+              <div class="col-name couple-chair">8</div>
+              <div class="col-name couple-chair">9</div>
+              <div class="col-name couple-chair">10</div>
+              <div class="col-name couple-chair">11</div>
+              <div class="col-name couple-chair">12</div>
+              <div class="col-name couple-chair">13</div>
+              <div class="col-name couple-chair">14</div>
+              <div class="col-name couple-chair">15</div>
+              <div class="col-name couple-chair">16</div>
+              <div class="col-name couple-chair">17</div>
+              <div class="col-name couple-chair">18</div>
+              <div class="col-name couple-chair check-chair">19</div>
+              <div class="col-name couple-chair check-chair">20</div>
+              <div class="col-name couple-chair">21</div>
+              <div class="col-name couple-chair">22</div>
+              <div class="col-name couple-chair">23</div>
+              <div class="col-name couple-chair">24</div>
+              <div class="col-name couple-chair">25</div>
+              <div class="col-name couple-chair">26</div>
+            </div>
+
+            <div class="d-flex row-chair">
+              <div class="row-name">C</div>
+              <div class="col-name">1</div>
+              <div class="col-name">2</div>
+              <div class="col-name">3</div>
+              <div class="col-name">4</div>
+              <div class="col-name">5</div>
+              <div class="col-name">6</div>
+              <div class="col-name erro-chair erro-chair">7</div>
+              <div class="col-name erro-chair erro-chair">8</div>
+              <div class="col-name erro-chair erro-chair">9</div>
+              <div class="col-name erro-chair erro-chair">10</div>
+              <div class="col-name erro-chair erro-chair">11</div>
+              <div class="col-name erro-chair erro-chair">12</div>
+              <div class="col-name erro-chair erro-chair">13</div>
+              <div class="col-name">14</div>
+              <div class="col-name">15</div>
+              <div class="col-name">16</div>
+              <div class="col-name">17</div>
+              <div class="col-name">18</div>
+              <div class="col-name">19</div>
+              <div class="col-name">20</div>
+              <div class="col-name">21</div>
+              <div class="col-name">22</div>
+              <div class="col-name">23</div>
+              <div class="col-name">24</div>
+              <div class="col-name">25</div>
+              <div class="col-name">26</div>
+            </div>
+
+            <div class="d-flex row-chair">
+              <div class="row-name">B</div>
+              <div class="col-name vip-chair">1</div>
+              <div class="col-name vip-chair">2</div>
+              <div class="col-name vip-chair">3</div>
+              <div class="col-name vip-chair">4</div>
+              <div class="col-name vip-chair">5</div>
+              <div class="col-name vip-chair">6</div>
+              <div class="col-name vip-chair">7</div>
+              <div class="col-name vip-chair erro-chair">8</div>
+              <div class="col-name vip-chair erro-chair">9</div>
+              <div class="col-name vip-chair erro-chair">10</div>
+              <div class="col-name vip-chair erro-chair">11</div>
+              <div class="col-name vip-chair erro-chair">12</div>
+              <div class="col-name vip-chair">13</div>
+              <div class="col-name vip-chair">14</div>
+              <div class="col-name vip-chair">15</div>
+              <div class="col-name vip-chair">16</div>
+              <div class="col-name vip-chair">17</div>
+              <div class="col-name vip-chair check-chair">18</div>
+              <div class="col-name vip-chair">19</div>
+              <div class="col-name vip-chair">20</div>
+              <div class="col-name vip-chair">21</div>
+              <div class="col-name vip-chair">22</div>
+              <div class="col-name vip-chair">23</div>
+              <div class="col-name vip-chair">24</div>
+              <div class="col-name vip-chair">25</div>
+              <div class="col-name vip-chair">26</div>
+            </div>
+
+            <div class="d-flex row-chair">
+              <div class="row-name">A</div>
+              <div class="col-name">1</div>
+              <div class="col-name">2</div>
+              <div class="col-name">3</div>
+              <div class="col-name">4</div>
+              <div class="col-name">5</div>
+              <div class="col-name">6</div>
+              <div class="col-name">7</div>
+              <div class="col-name">8</div>
+              <div class="col-name check-chair">9</div>
+              <div class="col-name">10</div>
+              <div class="col-name">11</div>
+              <div class="col-name">12</div>
+              <div class="col-name">13</div>
+              <div class="col-name erro-chair">14</div>
+              <div class="col-name erro-chair">15</div>
+              <div class="col-name">16</div>
+              <div class="col-name">17</div>
+              <div class="col-name">18</div>
+              <div class="col-name">19</div>
+              <div class="col-name erro-chair">20</div>
+              <div class="col-name erro-chair">21</div>
+              <div class="col-name">22</div>
+              <div class="col-name">23</div>
+              <div class="col-name">24</div>
+              <div class="col-name erro-chair">25</div>
+              <div class="col-name">26</div>
+            </div>
+
+            <!-- Screen -->
+            <div class="screen">
+              Màn hình
+            </div>
+            <div class="d-flex note">
+              <div class=""><span class="glyphicon glyphicon-stop c-green"></span> Ghế đang chọn</div>
+              <div class=""><span class="glyphicon glyphicon-stop c-blue"></span> Ghế đã bán</div>
+              <div class=""><span class="glyphicon glyphicon-stop c-grey"></span> Ghế trống</div>
+              <div class=""><span class="glyphicon glyphicon-stop c-gold"></span> Ghế vip</div>
+              <div class=""><span class="glyphicon glyphicon-stop c-red"></span> Ghế đôi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div class="box-info-order">
+          <img src="img/products/1000x700-movie15654postersrampant-hk-2_1541238785859.jpg" alt="">
+          <div class="order-info film-name">Phim: RAMPAINT</div>
+          <div class="order-info screened">Xuất chiếu: 10:15 | Thứ 3, 27/11/2018</div>
+          <div class="order-info combo">Combo:</div>
+          <div class="order-info chair">Ghế: D19, D20, B18, A9</div>
+          <div class="order-next" style="margin-top: 20px">
+            <a href="order.html" class="btn btn-success btn-order">TIẾP TỤC <span class="glyphicon glyphicon-arrow-right"></span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9" >
+        <h3 style="text-align: center;font-size: 40px;color: #1696E8">Chọn combo</h3>
+        <table class="table table-hover" style="background-color: #E0E0E0;border: 1px solid #ccc;font-size: 20px">
+          <thead>
+            <tr style="color:white ;background-color: #1BB2E3">
+              <th>Combo</th>
+              <th>Giá</th>
+              <th>Số lượng</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Combo1</td>
+              <td>50000</td>
+              <td>
+                <input type="number" name="" id="input" class="form-control" value="" min="{5"} max="" step="" required="required" title="">
+              </td>
+            </tr>
+            <tr>
+              <td>Combo2</td>
+              <td>50000</td>
+              <td>
+                <input type="number" name="" id="input" class="form-control" value="" min="{5"} max="" step="" required="required" title="">
+              </td>
+            </tr>
+            <tr>
+              <td>Combo3</td>
+              <td>50000</td>
+              <td>
+                <input type="number" name="" id="input" class="form-control" value="" min="{5"} max="" step="" required="required" title="">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <!-- Start col -->
+      <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+        <h1>Demo Cinema</h1>
+        <ul>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Giới Thiệu</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Tiện Ích</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Quà Tặng</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Tuyển Dụng</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Liên Hệ Quảng Cáo</a>
+          </li>
+        </ul>
+      </div>
+      <!-- End col -->
+      <!-- Start col -->
+      <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+        <h1>Điều khoản sử dụng</h1>
+        <ul>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Điều Khoản Chung</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Điều Khoản Giao Dịch</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Chính Sách Thanh Toán</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Chính Sách Bảo Mật</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Câu Hỏi Thường Gặp</a>
+          </li>
+        </ul>
+      </div>
+      <!-- End col -->
+      <!-- Start col -->
+      <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+        <h1>Hỗ trợ</h1>
+        <ul>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Hotline: 1900 0000</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Giờ Làm Việc: 8:00 - 22:00</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Giá Vé</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Khuyến Mãi</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Góp Ý</a>
+          </li>
+        </ul>
+      </div>
+      <!-- End col -->
+      <!-- Start col -->
+      <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+        <h1>Kết nối với chúng tôi</h1>
+        <ul class="connect">
+          <li>
+            <a href="" class="follow-fb"></a>
+          </li>
+          <li>
+            <a href="" class="follow-yt"></a>
+          </li>
+          <li>
+            <a href="" class="follow-ln"></a>
+          </li>
+          <li>
+            <a href="" class="follow-it"></a>
+          </li>
+          <li>
+            <a href="" class="follow-zl"></a>
+          </li>
+        </ul>
+      </div>
+      <!-- End col -->
+    </div>
+  </footer>
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

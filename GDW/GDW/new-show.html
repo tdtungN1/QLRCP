@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo Cinema</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand logo" href="index.html">
+            <img src="img/demo2.png" class="img-logo"> Cinema
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <form class="navbar-form navbar-left form-inline form-seach" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control txt-seach" placeholder="Search" name="key">
+              <a href="search.html" class="btn icon-seach"><span class="glyphicon glyphicon-search"></span></a>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a class="login" href="login.html">Đăng nhập</a>
+            </li>
+            <!-- Đã đăng nhập -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle login" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> </span> Xin chào Mặt Than<b class="caret"></b></a>
+              <ul class="dropdown-menu dropdown-menu-user">
+                <li><a href="user.html"><span class="glyphicon glyphicon-info-sign"> </span> Thông tin tài khoản</a></li>
+                <li><a href="user.html"><span class="glyphicon glyphicon-ok"></span> Thẻ thành viên</a></li>
+                <li><a href="user.html"><span class="glyphicon glyphicon-heart"></span> Hành trình điện ảnh</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="navbar-inverse">
+        <div class="container">
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-left nav-menu">
+              <li class="row-menu col-md-2 col-sm-2"><a href="showtimes.html">Lịch chiếu</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="movie.html">Phim</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="cinema.html">Rạp</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="fare.html">Giá vé</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="new.html">Tin mới và ưu đãi</a></li>
+              <li class="row-menu col-md-2 col-sm-2"><a href="user.html">Thành viên</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="container">
+      <div role="tabpanel" class="tab-film">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a class="tab-a">Cài App Beta, Nhận Quà Bao La</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="thumbnail">
+          <div class="col-md-12">
+            <img src="img/km1.jpg" alt="" class="img-film-new-show">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>
+            Ứng dụng Beta Cineplex nay đã có mặt trên cả Android và IOS.
+          </p>
+          <p>
+            Đặt vé xem phim chưa bao giờ tiện lợi và ưu việt đến thế !!
+          </p>
+          <p>
+            Xem hướng dẫn sử dụng tại:
+            <a href="#">https://facebook.com/betacineplex/videos/686984825009602/</a>
+          </p>
+          <p style="font-weight: bold;">
+            ĐẶC QUYỀN CHO KHÁCH HÀNG SỬ DỤNG ỨNG DỤNG BETA CINEPLEX:
+          </p>
+          <p>
+            – KHÁCH HÀNG THÂN THIẾT: Tích luỹ 1% tiền mua vé và 3% tiền mua đồ ăn uống.
+          </p>
+          <p>
+            – KHÁCH HÀNG V.I.P: Tích luỹ 1% tiền mua vé và 5% tiền mua đồ ăn uống.
+          </p>
+          <p>
+            – ĐỒNG GIÁ VÉ 45K CHO MỌI PHIM MỌI KHUNG GIỜ TỪ THỨ 2 ĐẾN THỨ 6 HÀNG TUẦN TẠI CÁC RẠP:
+          </p>
+          <li>
+            <a style="font-weight: bold;">
+              BETA CINEPLEX THANH XUÂN
+            </a>
+          </li>
+          <li>
+            <a style="font-weight: bold;">
+              BETA CINEPLEX BIÊN HOÀ
+            </a>
+          </li>
+          <li>
+            <a style="font-weight: bold;">
+              BETA CINEPLEX NHA TRANG
+            </a>
+          </li>
+          <p style="font-weight: bold; font-style: italic; margin-top: 10px;">
+            ĐIỀU KIỆN ÁP DỤNG
+          </p>
+          <p>
+            – Áp dụng cho mọi khách hàng đã có tài khoản trên ứng dụng Beta Cineplex
+          </p>
+          <p>
+            – Giá vé khuyến mại 40k/45k Chỉ áp dụng cho phim 2D
+          </p>
+          <p>
+            – Áp dụng cho cả hình thức mua vé online và mua vé tại quầy
+          </p>
+          <p>
+            – Không áp dụng đồng thời với các chương trình khuyến mại khác
+          </p>
+          <p>
+            – Không áp dụng nếu trùng vào ngày lễ, Tết.
+          </p>
+          <p>
+            – Không áp dụng cho các suất chiếu đặc biệt hoặc phim ra mắt sớm
+          </p>
+          <a style="font-weight: bold; font-style: italic; color: red">
+            Click tải ngay để nhận ưu đãi:
+            <a href="" style="font-style: italic; color: red"> http://onelink.to/zmb6dp</a>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <!-- Start col -->
+      <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+        <h1>Demo Cinema</h1>
+        <ul>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Giới Thiệu</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Tiện Ích</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Quà Tặng</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Tuyển Dụng</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Liên Hệ Quảng Cáo</a>
+          </li>
+        </ul>
+      </div>
+      <!-- End col -->
+      <!-- Start col -->
+      <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+        <h1>Điều khoản sử dụng</h1>
+        <ul>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Điều Khoản Chung</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Điều Khoản Giao Dịch</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Chính Sách Thanh Toán</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Chính Sách Bảo Mật</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Câu Hỏi Thường Gặp</a>
+          </li>
+        </ul>
+      </div>
+      <!-- End col -->
+      <!-- Start col -->
+      <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+        <h1>Hỗ trợ</h1>
+        <ul>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Hotline: 1900 0000</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Giờ Làm Việc: 8:00 - 22:00</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Giá Vé</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Khuyến Mãi</a>
+          </li>
+          <li>
+            <a href=""><span class="glyphicon glyphicon-share-alt"></span> Góp Ý</a>
+          </li>
+        </ul>
+      </div>
+      <!-- End col -->
+      <!-- Start col -->
+      <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 col-footer">
+        <h1>Kết nối với chúng tôi</h1>
+        <ul class="connect">
+          <li>
+            <a href="" class="follow-fb"></a>
+          </li>
+          <li>
+            <a href="" class="follow-yt"></a>
+          </li>
+          <li>
+            <a href="" class="follow-ln"></a>
+          </li>
+          <li>
+            <a href="" class="follow-it"></a>
+          </li>
+          <li>
+            <a href="" class="follow-zl"></a>
+          </li>
+        </ul>
+      </div>
+      <!-- End col -->
+    </div>
+  </footer>
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>
