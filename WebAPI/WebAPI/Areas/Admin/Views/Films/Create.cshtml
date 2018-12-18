@@ -11,8 +11,7 @@
 }
 <h2>Thêm phim</h2>
 
-@using (Html.BeginForm())
-{
+<form name="formAddFilm" method="post" enctype="multipart/form-data">
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
@@ -21,20 +20,20 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="">Ảnh hiển thị</label>
-                    <input type="file" name="images" value="" accept="image/*" class="">
+                    <input type="file" name="images" value="" accept="image/*">
                     <div class="view-images">
-                        <img src="~/Content/images/smallfoot_vietnamese_poster240.jpg" />
+                        <img src="/Content/images/smallfoot_vietnamese_poster240.jpg" id="image-film" />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="">Trailer (Mã nhúng)</label>
+                    <button class="btn-default" onclick="ViewTrailer()" type="button">Xem</button>
                     <textarea name="trailer" rows="2" class="form-control"></textarea>
                     <div class="view-trailer">
-                        <iframe width="1132" height="637" src="https://www.youtube.com/embed/dLQe4qEfVJw?list=RDIGyA9CxWwbs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    
+
                 </div>
-            </div>  
+            </div>
             <div class="col-md-8">
                 <div class="form-group">
                     <label for="">Tên phim</label>
@@ -82,6 +81,7 @@
 
                 <script type="text/javascript">
                     $(document).ready(function () {
+                        UploadChange();
                         CheckBoxGenreFilm();
                     })
                 </script>
@@ -92,5 +92,5 @@
             </div>
         </div>
     </div>
-}
+</form>
 

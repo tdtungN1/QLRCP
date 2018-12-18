@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using WebAPI.Models;
 
@@ -97,11 +99,11 @@ namespace WebAPI.Areas.Admin.Controllers.API
             film.Film_GenreFilm = film_GenreFilms;
             return film;
         }
-
+        [HttpPost]
         // POST: api/Film
         public int Post([FromBody]Film value)
         {
-            string query = "INSERT dbo.Film(FilmName,Author,Producer,ReleaseDate,Nation,Description,Rated,Actor,Status)VALUES(N'" + value.FilmName + "',N'" + value.Author + "',N'" + value.Producer + "','" + value.ReleaseDate + "',N'" + value.Nation + "',N'" + value.Description + "'," + value.Rated + ",N'" + value.Actor + "'," + value.Status + ")";
+            string query = "INSERT dbo.Film(FilmName,Author,Producer,ReleaseDate,Nation,Description,Rated,Actor,Status,Images,Trailer)VALUES(N'" + value.FilmName + "',N'" + value.Author + "',N'" + value.Producer + "','" + value.ReleaseDate + "',N'" + value.Nation + "',N'" + value.Description + "'," + value.Rated + ",N'" + value.Actor + "'," + value.Status + ",N'" + value.Images + "',N'" + value.Trailer + "')";
             try
             {
                 int res = DataProvider.Instace.ExecuteNonQuery(query);
@@ -114,11 +116,31 @@ namespace WebAPI.Areas.Admin.Controllers.API
             DataTable table = DataProvider.Instace.ExecuteQuery(query1);
             return int.Parse(table.Rows[0][0].ToString());
         }
+        [HttpPost]
+        public string UploadImage(string type)
+        {
+            if (HttpContext.Current.Request.Files.AllKeys.Any())
+            {
+                // Get the uploaded image from the Files collection
+                var httpPostedFile = HttpContext.Current.Request.Files["file"];
 
+                if (httpPostedFile != null)
+                {
+                    // Lưu file vào Uploads
+                    var filePath = "~/Content/Uploads/" + httpPostedFile.FileName;
+                    if (!File.Exists(filePath))
+                    {
+                        httpPostedFile.SaveAs(HttpContext.Current.Server.MapPath("~/Content/Uploads/" + httpPostedFile.FileName));
+                    }
+                    return "/Content/Uploads/" + httpPostedFile.FileName;
+                }
+            }
+            return "";
+        }
         // PUT: api/Film/5
         public int Put(int id, [FromBody]Film value)
         {
-            string query = "UPDATE dbo.Film SET FilmName = N'" + value.FilmName + "', Author = N'" + value.Author + "', Producer=N'" + value.Nation + "',ReleaseDate='" + value.ReleaseDate + "',Description=N'" + value.Description + "',Rated="+value.Rated+ ",Actor=N'"+value.Actor+ "',Status="+value.Status+" WHERE FilmID =" + id;
+            string query = "UPDATE dbo.Film SET FilmName = N'" + value.FilmName + "', Author = N'" + value.Author + "', Producer=N'" + value.Nation + "',ReleaseDate='" + value.ReleaseDate + "',Description=N'" + value.Description + "',Rated=" + value.Rated + ",Actor=N'" + value.Actor + "',Status=" + value.Status + ",Images='" + value.Images + "',Trailer='" + value.Trailer + "' WHERE FilmID =" + id;
             try
             {
                 int res = DataProvider.Instace.ExecuteNonQuery(query);

@@ -11,49 +11,66 @@
 }
 <h2>Sửa phim</h2>
 
-@using (Html.BeginForm())
-{
+<form name="formAddFilm" method="post" enctype="multipart/form-data">
     @Html.AntiForgeryToken()
     <div class="form-horizontal">
         <hr />
-        <input type="hidden" value="@Model.FilmID" name="FilmID"/>
+        <input type="hidden" value="@Model.FilmID" name="FilmID" />
         <div class="container">
-            <div class="form-group">
-                <label for="">Tên phim</label>
-                <input type="text" class="form-control" name="FilmName" id="" placeholder="Tên phim" value="@Model.FilmName">
-            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="">Ảnh hiển thị</label>
+                    <input type="file" name="images" value="" accept="image/*">
+                    <div class="view-images">
+                        <img src="@Model.Images" id="image-film" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Trailer (Mã nhúng)</label>
+                    <textarea name="trailer" rows="2" class="form-control" onblur="ViewTrailer()">&lt;iframe src=&quot;https:&sol;&sol;www.youtube.com&sol;embed&sol;K5jjNqAlmaM&quot; &gt;&lt;&sol;iframe&gt;</textarea>
+                    <div class="view-trailer">
+                        <iframe width="1132" height="637" src="@Model.Trailer" id="frmTrailer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
 
-            <div class="form-group">
-                <label for="">Đạo diễn</label>
-                <input type="text" class="form-control" name="Author" id="" placeholder="Đạo diễn" value="@Model.Author">
+                </div>
             </div>
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label for="">Tên phim</label>
+                    <input type="text" class="form-control" name="FilmName" id="" placeholder="Tên phim" value="@Model.FilmName">
+                </div>
 
-            <div class="form-group">
-                <label for="">Nhà sản xuất</label>
-                <input type="text" class="form-control" name="Producer" id="" placeholder="Nhà sản xuất" value="@Model.Producer">
-            </div>
+                <div class="form-group">
+                    <label for="">Đạo diễn</label>
+                    <input type="text" class="form-control" name="Author" id="" placeholder="Đạo diễn" value="@Model.Author">
+                </div>
 
-            <div class="form-group">
-                <label for="">Quốc gia</label>
-                <input type="text" class="form-control" name="Nation" id="" value="@Model.Nation" />
-            </div>
+                <div class="form-group">
+                    <label for="">Nhà sản xuất</label>
+                    <input type="text" class="form-control" name="Producer" id="" placeholder="Nhà sản xuất" value="@Model.Producer">
+                </div>
 
-            <div class="form-group">
-                <label for="">Ngày khởi chiếu</label>
-                @{
-                    var date = String.Format("{0:yyyy-MM-dd}", Model.ReleaseDate);
-                }
-                <input type="date" class="form-control" name="ReleaseDate" id="" value="@date" />
-            </div>
-            <div class="form-group">
-                <label for="">Diễn viên</label>
-                <input type="text" class="form-control" name="Actor" id="" value="@Model.Actor"/>
-            </div>
-            <div class="form-group">
-                <label for="">Đánh giá</label>
-                <input type="text" class="form-control" name="Rated" id="" placeholder="5.0" value="@Model.Rated" />
-            </div>
+                <div class="form-group">
+                    <label for="">Quốc gia</label>
+                    <input type="text" class="form-control" name="Nation" id="" value="@Model.Nation" />
+                </div>
 
+                <div class="form-group">
+                    <label for="">Ngày khởi chiếu</label>
+                    @{
+                        var date = String.Format("{0:yyyy-MM-dd}", Model.ReleaseDate);
+                    }
+                    <input type="date" class="form-control" name="ReleaseDate" id="" value="@date" />
+                </div>
+                <div class="form-group">
+                    <label for="">Diễn viên</label>
+                    <input type="text" class="form-control" name="Actor" id="" value="@Model.Actor" />
+                </div>
+                <div class="form-group">
+                    <label for="">Đánh giá</label>
+                    <input type="text" class="form-control" name="Rated" id="" placeholder="5.0" value="@Model.Rated" />
+                </div>
+            </div>
             <div class="form-group">
                 <label for="">Chi tiết</label>
                 <textarea name="Description" rows="5" class="form-control">@Model.Description</textarea>
@@ -73,6 +90,7 @@
                 $(document).ready(function () {
                     CheckBoxGenreFilm(@Model.FilmID);
                     $("input[name='Status'][value='" + @Model.Status + "']").prop('checked', true);
+                    UploadChange('@Model.Images');
                 })
             </script>
 
@@ -82,7 +100,4 @@
         </div>
     </div>
 
-
-
-
-}
+</form>

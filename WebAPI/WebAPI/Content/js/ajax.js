@@ -228,23 +228,27 @@ function BtnEditGenreFilm_Click(id) {
     })
 }
 //Sửa Film
-function BtnEditFilm_Click() {
+function BtnEditFilm_Click(id) {
     var FilmID = $("input[name = 'FilmID']").val();
-    var FilmName = $("input[name = 'FilmName']").val();
-    var Author = $("input[name = 'Author']").val();
-    var Producer = $("input[name = 'Producer']").val();
-    var ReleaseDate = $("input[name = 'ReleaseDate']").val();
-    var Nation = $("input[name = 'Nation']").val();
-    var Rated = $("input[name = 'Rated']").val();
-    var Actor = $("input[name = 'Actor']").val();
+    var FilmName = ($("input[name = 'FilmName']").val().length > 0) ? $("input[name = 'FilmName']").val() : "";
+    var Author = ($("input[name = 'Author']").val().length > 0) ? $("input[name = 'Author']").val() : "";
+    var Producer = ($("input[name = 'Producer']").val() > 0) ? $("input[name = 'Producer']").val() : "";
+    var ReleaseDate = ($("input[name = 'ReleaseDate']").val().length > 0) ? $("input[name = 'ReleaseDate']").val() : "";
+    var Nation = ($("input[name = 'Nation']").val().length > 0) ? $("input[name = 'Nation']").val() : "";
+    var Rated = ($("input[name = 'Rated']").val().length > 0) ? $("input[name = 'Rated']").val() : 0;
+    var Actor = ($("input[name = 'Actor']").val().length > 0) ? $("input[name = 'Actor']").val() : "";
     var Status = 0;
+    var Images = ($("#image-film").attr('src').length > 0) ? $("#image-film").attr('src') : "";
     $("input[name = 'Status']").each(function () {
         if ($(this).is(":checked")) {
             Status = $(this).val();
         }
     })
+
     var Description = $("textarea[name = 'Description']").val();
-    var film = { FilmName: FilmName, Author: Author, Producer: Producer, ReleaseDate: ReleaseDate, Nation: Nation, Rated: Rated, Actor: Actor, Status: Status, Description: Description }
+    var Trailer = $("textarea[name = 'Trailer']").val();
+    debugger
+    var film = { FilmName: FilmName, Author: Author, Producer: Producer, ReleaseDate: ReleaseDate, Nation: Nation, Rated: Rated, Actor: Actor, Status: Status, Description: Description, Images: Images, Trailer: Trailer };
     var genreFilm = [];
     $("input[name = 'GenreFilm']").each(function () {
         if ($(this).is(":checked")) {
@@ -365,17 +369,19 @@ function BtnAddGenreFilm_Click() {
 
 //Thêm phim
 function BtnAddFilm_Click() {
-    var FilmName = $("input[name = 'FilmName']").val();
-    var Author = $("input[name = 'Author']").val();
-    var Producer = $("input[name = 'Producer']").val();
-    var ReleaseDate = $("input[name = 'ReleaseDate']").val();
-    var Nation = $("input[name = 'Nation']").val();
-    var Rated = $("input[name = 'Rated']").val();
-    var Actor = $("input[name = 'Actor']").val();
+    var FilmName = ($("input[name = 'FilmName']").val().length > 0) ? $("input[name = 'FilmName']").val() : "";
+    var Author = ($("input[name = 'Author']").val().length > 0) ? $("input[name = 'Author']").val() : "";
+    var Producer = ($("input[name = 'Producer']").val() > 0) ? $("input[name = 'Producer']").val() : "";
+    var ReleaseDate = ($("input[name = 'ReleaseDate']").val().length > 0) ? $("input[name = 'ReleaseDate']").val() : "";
+    var Nation = ($("input[name = 'Nation']").val().length > 0) ? $("input[name = 'Nation']").val() : "";
+    var Rated = ($("input[name = 'Rated']").val().length > 0) ? $("input[name = 'Rated']").val() : 0;
+    var Actor = ($("input[name = 'Actor']").val().length > 0) ? $("input[name = 'Actor']").val() : "";
+    var Images = ($("#image-film").attr('src').length > 0) ? $("#image-film").attr('src') : "";
     //Mặc định thêm phim là sắp chiếu.
     var Status = 0;
-    var Description = $("textarea[name = 'Description']").val();
-    var film = { FilmName: FilmName, Author: Author, Producer: Producer, ReleaseDate: ReleaseDate, Nation: Nation, Rated: Rated, Actor: Actor, Status: Status, Description: Description }
+    var Description = ($("textarea[name = 'Description']").val().length > 0) ? $("textarea[name = 'Description']").val() : "";
+    var Trailer = ($("textarea[name = 'Trailer']").html() > 0) ? $("textarea[name = 'Description']").val() : "";
+    var film = { FilmName: FilmName, Author: Author, Producer: Producer, ReleaseDate: ReleaseDate, Nation: Nation, Rated: Rated, Actor: Actor, Status: Status, Description: Description, Images: Images, Trailer: Trailer };
     var genreFilm = [];
     //Thêm mới phim
     $.ajax({
@@ -584,4 +590,36 @@ function CheckBoxGenreFilm(id) {
             }
         });
     }
+}
+
+function UploadChange(src) {
+    $("input[name='images']").change(function () {
+        if (window.FormData != undefined) {
+            var images = $("input[name='images']").get(0);
+            var files = images.files;
+            var formData = new FormData();
+            formData.append('file', files[0]);
+            console.log(files[0]);
+            console.log(formData.getAll('file'));
+            //Them anh
+            $.ajax({
+                type: "POST",
+                url: "/api/Film/UploadImage?type=images",
+                contentType: false,
+                processData: false,
+                data: formData,
+                success: function (res) {
+                    (res.length > 0) ? $("#image-film").attr('src', res) : src;
+                },
+                error: function (err) {
+                    alert("Có lỗi xảy ra: " + err);
+                }
+            });
+        }
+    });
+}
+
+function ViewTrailer() {
+    var trailer = $("textarea[name='trailer']").val();
+    $(".view-trailer").html(trailer);
 }
