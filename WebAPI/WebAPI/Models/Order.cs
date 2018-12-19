@@ -6,28 +6,26 @@ namespace WebAPI.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Ticket")]
-    public partial class Ticket
+    [Table("Order")]
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Ticket()
+        public Order()
         {
             OrderDetails = new HashSet<OrderDetail>();
         }
 
-        public int TicketID { get; set; }
+        public int OrderID { get; set; }
 
-        public int ShowTimeID { get; set; }
+        public int? UserID { get; set; }
 
-        public int? ChairID { get; set; }
+        public long? Total { get; set; }
 
-        public long Price { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
-        public virtual Chair Chair { get; set; }
+        public virtual User User { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-
-        public virtual ShowTime ShowTime { get; set; }
     }
 }

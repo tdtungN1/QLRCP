@@ -180,12 +180,15 @@
     <Compile Include="Areas\Admin\Controllers\API\GenreChairController.cs" />
     <Compile Include="Areas\Admin\Controllers\API\GenreRoomController.cs" />
     <Compile Include="Areas\Admin\Controllers\API\Genre_filmController.cs" />
+    <Compile Include="Areas\Admin\Controllers\API\ShowTimeController.cs" />
     <Compile Include="Areas\Admin\Controllers\MVC\FilmsController.cs" />
     <Compile Include="Areas\Admin\Controllers\MVC\Genre_filmController.cs" />
     <Compile Include="Areas\Admin\Controllers\MVC\Genre_roomController.cs" />
     <Compile Include="Areas\Admin\Controllers\MVC\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\API\RoomsController.cs" />
     <Compile Include="Areas\Admin\Controllers\MVC\RoomsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MVC\ShowTimesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MVC\TicketsController.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
@@ -219,6 +222,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Chair.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\DataProvider.cs" />
@@ -228,6 +232,8 @@
     <Compile Include="Models\Genre_film.cs" />
     <Compile Include="Models\Genre_room.cs" />
     <Compile Include="Models\QLRCP.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\ShowTime.cs" />
     <Compile Include="Models\sysdiagram.cs" />
@@ -308,6 +314,12 @@
     <Content Include="Areas\Admin\Views\Genre_film\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Genre_film\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Genre_film\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickets\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickets\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Tickets\OrderTicket.cshtml" />
+    <Content Include="Areas\Admin\Views\ShowTimes\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ShowTimes\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ShowTimes\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

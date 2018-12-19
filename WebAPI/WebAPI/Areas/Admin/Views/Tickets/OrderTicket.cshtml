@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "OrderTicket";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section boxTitle {
+    <div class="col-md-12">
+        @Html.ActionLink("Trở về", "/Index")
+    </div>
+}
+<h2>Mua vé</h2>
+
+<div class="form-horizontal">
+    <hr />
+    <div class="container">
+        <div class="form-group">
+            <label for="">Chọn phim</label>
+            <input type="file" name="images" value="" accept="image/*">
+            <div class="view-images">
+                <img src="/Content/images/smallfoot_vietnamese_poster240.jpg" id="image-film" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

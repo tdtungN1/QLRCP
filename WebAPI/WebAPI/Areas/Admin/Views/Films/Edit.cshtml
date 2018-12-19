@@ -6,7 +6,7 @@
 }
 @section boxTitle {
     <div class="col-md-12">
-        @Html.ActionLink("Trở về", "Index")
+        @Html.ActionLink("Trở về", "/Index")
     </div>
 }
 <h2>Sửa phim</h2>
@@ -27,11 +27,11 @@
                 </div>
                 <div class="form-group">
                     <label for="">Trailer (Mã nhúng)</label>
-                    <textarea name="trailer" rows="2" class="form-control" onblur="ViewTrailer()">&lt;iframe src=&quot;https:&sol;&sol;www.youtube.com&sol;embed&sol;K5jjNqAlmaM&quot; &gt;&lt;&sol;iframe&gt;</textarea>
+                    <textarea name="trailer" rows="2" class="form-control" onblur="ViewTrailer()">@Model.Trailer</textarea>
                     <div class="view-trailer">
-                        <iframe width="1132" height="637" src="@Model.Trailer" id="frmTrailer" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        
                     </div>
-
+                    
                 </div>
             </div>
             <div class="col-md-8">
@@ -91,6 +91,7 @@
                     CheckBoxGenreFilm(@Model.FilmID);
                     $("input[name='Status'][value='" + @Model.Status + "']").prop('checked', true);
                     UploadChange('@Model.Images');
+                    ViewTrailer();
                 })
             </script>
 

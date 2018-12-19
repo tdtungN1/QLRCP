@@ -19,6 +19,8 @@ namespace WebAPI.Models
         public virtual DbSet<Genre_chair> Genre_chair { get; set; }
         public virtual DbSet<Genre_film> Genre_film { get; set; }
         public virtual DbSet<Genre_room> Genre_room { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
         public virtual DbSet<ShowTime> ShowTimes { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
@@ -48,6 +50,11 @@ namespace WebAPI.Models
                 .WithRequired(e => e.Film)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Order>()
+                .HasMany(e => e.OrderDetails)
+                .WithRequired(e => e.Order)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<Room>()
                 .HasMany(e => e.ShowTimes)
                 .WithRequired(e => e.Room)
@@ -56,6 +63,11 @@ namespace WebAPI.Models
             modelBuilder.Entity<ShowTime>()
                 .HasMany(e => e.Tickets)
                 .WithRequired(e => e.ShowTime)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Ticket>()
+                .HasMany(e => e.OrderDetails)
+                .WithRequired(e => e.Ticket)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<User>()

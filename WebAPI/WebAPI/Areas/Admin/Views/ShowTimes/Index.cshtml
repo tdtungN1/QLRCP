@@ -1,0 +1,37 @@
+﻿@model IEnumerable<WebAPI.Models.ShowTime>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tên phim
+            </th>
+            <th>
+                Phòng
+            </th>
+            <th>
+                Loại Phòng
+            </th>
+            <th>
+                Giờ chiếu
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="tbody-ShowTime"></tbody>
+</table>
+<script>
+    $(document).ready(function () {
+        LoadDataShowTime();
+    })
+</script>

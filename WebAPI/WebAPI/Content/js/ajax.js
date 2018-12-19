@@ -116,6 +116,16 @@ function formatdate(date) {
     var year = dates.getFullYear();
     return day + "/" + month + "/" + year;
 }
+
+function formatFullDate(date) {
+    dates = new Date(date);
+    var day = dates.getDate();
+    var month = dates.getMonth();
+    var year = dates.getFullYear();
+    var hours = dates.getHours();
+    var minute = dates.getMinutes();
+    return hours + ":" + minute + " - " + day + "/" + month + "/" + year;
+}
 //Lấy trạng thái phim
 //0: Sắp chiếu
 //1: Đang chiếu
@@ -246,7 +256,7 @@ function BtnEditFilm_Click(id) {
     })
 
     var Description = $("textarea[name = 'Description']").val();
-    var Trailer = $("textarea[name = 'Trailer']").val();
+    var Trailer = $("textarea[name = 'trailer']").val();
     debugger
     var film = { FilmName: FilmName, Author: Author, Producer: Producer, ReleaseDate: ReleaseDate, Nation: Nation, Rated: Rated, Actor: Actor, Status: Status, Description: Description, Images: Images, Trailer: Trailer };
     var genreFilm = [];
@@ -380,7 +390,7 @@ function BtnAddFilm_Click() {
     //Mặc định thêm phim là sắp chiếu.
     var Status = 0;
     var Description = ($("textarea[name = 'Description']").val().length > 0) ? $("textarea[name = 'Description']").val() : "";
-    var Trailer = ($("textarea[name = 'Trailer']").html() > 0) ? $("textarea[name = 'Description']").val() : "";
+    var Trailer = ($("textarea[name = 'trailer']").html() > 0) ? $("textarea[name = 'trailer']").val() : "";
     var film = { FilmName: FilmName, Author: Author, Producer: Producer, ReleaseDate: ReleaseDate, Nation: Nation, Rated: Rated, Actor: Actor, Status: Status, Description: Description, Images: Images, Trailer: Trailer };
     var genreFilm = [];
     //Thêm mới phim
@@ -504,8 +514,8 @@ function LoadDataRoom() {
                 _table += "<td>" + item.RoomID + "</td>";
                 _table += "<td>" + item.RoomName + "</td>";
                 _table += "<td>" + item.Genre_room.GenreRoomName + "</td>";
-                _table = +"<td>" + GetStatusRoom(item.StatusRoom) + "</td>";
-                _table = _table + "<td>";
+                _table += "<td>" + GetStatusRoom(item.StatusRoom) + "</td>";
+                _table += "<td>";
                 _table += "<div class='d-flex'><a href='Edit/" + item.RoomID + "' class='btn btn-primary'>Sửa</a><button class='btn btn-danger btn-del-room' onclick='DelRoomClick(" + item.RoomID + ")'>Xóa</button>";
                 _table += "</td></tr>";
             });
@@ -522,10 +532,10 @@ function LoadDataGenreFilm() {
         dataType: 'json',
         success: function (res) {
             $.each(res, function (i, item) {
-                _table = "<tr>";
-                _table = _table + "<td>" + item.GenreFilmID + "</td>";
-                _table = _table + "<td>" + item.GenreFilmName + "</td>";
-                _table = _table + "<td>";
+                _table += "<tr>";
+                _table += "<td>" + item.GenreFilmID + "</td>";
+                _table += "<td>" + item.GenreFilmName + "</td>";
+                _table += "<td>";
                 _table += "<div class='d-flex'><a href='Edit/" + item.GenreFilmID + "' class='btn btn-primary'>Sửa</a><button class='btn btn-danger btn-del-room' onclick='DelGenreFilmClick(" + item.GenreFilmID + ")'>Xóa</button>";
                 _table += "</td></tr>";
             });
@@ -559,6 +569,34 @@ function LoadDataFilm() {
         }
     });
 };
+//table ShowTime
+function LoadDataShowTime(id) {
+    _table = "";
+    if (id > 0) {
+        var tbody = $(".tbody-ShowTime-" + id);
+    } else {
+        var tbody = $(".tbody-ShowTime");
+    }
+    tbody.html("");
+    $.ajax({
+        url: "/api/ShowTime/?genreRoomID=" + id,
+        type: 'GET',
+        dataType: 'json',
+        success: function (res) {
+            $.each(res, function (i, item) {
+                _table += "<tr>";
+                _table += "<td>" + item.Film.FilmName + "</td>";
+                _table += "<td>" + item.Room.RoomName + "</td>";
+                _table += "<td>" + item.Room.Genre_room.GenreRoomName + "</td>";
+                _table += "<td>" + formatFullDate(item.StartTime) + "</td>";
+                _table = _table + "<td>";
+                _table += "<div class='d-flex'><a href='Edit/" + item.ShowTimeID + "' class='btn btn-primary'>Sửa</a><button class='btn btn-danger btn-del-room' onclick='DelShowTimeClick(" + item.ShowTimeID + ")'>Xóa</button>";
+                _table += "</td></tr>";
+            })
+            tbody.html(_table);
+        }
+    });
+}
 
 function CheckBoxGenreFilm(id) {
     var html = "";

@@ -10,40 +10,38 @@
 <p>
     @Html.ActionLink("Thêm mới", "Create")
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Tên phim
-            </th>
-            <th>
-                Đạo diễn
-            </th>
-            <th style="width:300px;">
-                Nhà sản xuất
-            </th>
-            <th>
-                Ngày khởi chiếu
-            </th>
-            <th>
-                Quốc gia
-            </th>
-            <th>
-                Đánh giá
-            </th>
-            <th width="150px">
-                Diễn viên
-            </th>
-            <th>
-                Trạng thái
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody class="tbody-film">
-        
-    </tbody>
-</table>
+<div style="width:100%; overflow:auto">
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="min-width:300px;">
+                    Tên phim
+                </th>
+                <th style="min-width:200px;">
+                    Đạo diễn
+                </th>
+                <th style="min-width:180px;">
+                    Nhà sản xuất
+                </th>
+                <th style="min-width:150px;">
+                    Ngày khởi chiếu
+                </th>
+                <th style="min-width:200px;">
+                    Quốc gia
+                </th>
+                <th style="min-width:250px;">
+                    Diễn viên
+                </th>
+                <th style="min-width:150px;">
+                    Trạng thái
+                </th>
+                <th style="min-width:150px;">Đổi trạng thái</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="tbody-film"></tbody>
+    </table>
+</div>
 <script type="text/javascript">
     $(document).ready(function () {
         LoadDataFilm();
